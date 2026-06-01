@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nos Robes &amp; Services | Umel Couture — Création sur mesure, Retouches, Location</title>
+<meta name="description" content="Umel Couture — Création sur mesure, retouches (dès 250€), location (dès 1000€) et pressing spécialisé. Maison de couture à Servon, Seine-et-Marne.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FAFAF8;--cream:#F2EDE6;--nude:#D4A99A;--blush:#E8C9BC;--charcoal:#2C2420;--taupe:#8A7F78;--terra:#C4756A;--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1)}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--charcoal);font-family:'EB Garamond',serif;overflow-x:hidden}
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:36px;background:rgba(250,250,248,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(212,169,154,.22);border-radius:50px;width:calc(100% - 48px);max-width:1100px;transition:all .4s}
+.scrolled{background:rgba(250,250,248,.96)!important;border-color:rgba(212,169,154,.4)!important;box-shadow:0 8px 32px rgba(44,36,32,.08)!important}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo-img{height:52px;width:auto;display:block;object-fit:contain}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;position:relative;padding-bottom:3px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:1px;background:var(--nude);transition:width .4s var(--ease-out-expo),left .4s var(--ease-out-expo)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;left:0}
+.nav-links a.active{color:var(--terra)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;cursor:pointer}
+.hbg span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s}
+.nav-cta{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:11px 26px;border:none;transition:all .3s;text-decoration:none;display:inline-block;border-radius:4px}
+.nav-cta:hover{background:var(--terra)}
+.page-hero{min-height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:160px 80px 90px;background:linear-gradient(135deg,#F7F2EC 0%,#FAFAF8 55%,#EDD5C8 100%);position:relative}
+.page-hero .hl{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.58em;text-transform:uppercase;color:var(--taupe);margin-bottom:24px;display:block;opacity:0;animation:fu .8s .2s forwards}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.4vw,56px);font-weight:300;line-height:1.08;color:var(--charcoal);max-width:none;opacity:0;animation:fu .9s .4s forwards}
+.page-hero h1 em{font-style:italic;color:var(--terra)}
+.page-hero .hs{font-family:'EB Garamond',serif;font-size:clamp(15px,1.4vw,18px);line-height:1.85;color:var(--taupe);margin-top:22px;opacity:0;animation:fu .8s .6s forwards}
+section.s{padding:110px 80px;opacity:0;transition:opacity 1s var(--ease-out-expo)}
+section.s.vis{opacity:1}
+.sl-lbl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.56em;text-transform:uppercase;color:var(--nude);margin-bottom:18px;display:block}
+.bp{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--white);background:var(--charcoal);background-image:linear-gradient(var(--terra) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:6px;text-decoration:none;transition:background-position 480ms var(--ease-out-expo),border-color 300ms;display:inline-block}
+.bp:hover{background-position:0 0;border-color:var(--terra)}
+.bs{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);background:transparent;padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:6px;text-decoration:none;transition:all .3s;display:inline-block}
+.bs:hover{border-color:var(--nude);color:var(--terra)}
+.sc{background:var(--white);padding:56px 46px 52px;position:relative;overflow:hidden;border:none;transition:transform 380ms var(--ease-out-expo),box-shadow 380ms var(--ease-out-expo)}
+.sc::before{content:'';position:absolute;top:0;left:46px;width:38px;height:2px;background:var(--terra);transition:width 400ms var(--ease-out-expo)}
+.sc:hover{transform:translateY(-5px);box-shadow:0 22px 54px rgba(44,36,32,.09)}
+.sc:hover::before{width:80px}
+.sn{font-family:'Cormorant Garamond',serif;font-size:140px;font-weight:300;color:var(--cream);line-height:1;position:absolute;bottom:-24px;right:22px;pointer-events:none;user-select:none;transition:color 380ms;z-index:0}
+.sc:hover .sn{color:var(--blush)}
+.sc h3{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;margin-bottom:16px;color:var(--charcoal);margin-top:26px;position:relative;z-index:1}
+.sc p{font-family:'EB Garamond',serif;font-size:15px;line-height:1.85;color:var(--taupe);position:relative;z-index:1}
+.cband{background:var(--charcoal);padding:110px 80px;text-align:center}
+.cband h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,68px);font-weight:300;color:var(--white);margin-bottom:14px;line-height:1.1}
+.cband h2 em{font-style:italic;color:var(--nude)}
+.cband p{font-family:'EB Garamond',serif;font-size:17px;color:rgba(250,250,248,.55);margin-bottom:44px}
+.bl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);background:var(--white);background-image:linear-gradient(var(--nude) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;padding:16px 44px;border-radius:6px;text-decoration:none;display:inline-block;transition:background-position 480ms var(--ease-out-expo)}
+.bl:hover{background-position:0 0}
+.rtag{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--terra);border:1px solid var(--blush);padding:7px 18px}
+footer{background:var(--charcoal);padding:56px 80px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px}
+.fb .ft{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.46em;color:var(--white);text-transform:uppercase;margin-bottom:14px;display:block}
+.fb p{font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.55);line-height:1.85}
+.fl h4,.fsoc h4{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;color:var(--nude);margin-bottom:22px}
+.fl ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fl a{font-family:'EB Garamond',serif;font-size:14.5px;color:rgba(250,250,248,.55);text-decoration:none;transition:color .3s}
+.fl a:hover{color:var(--nude)}
+.si2{display:flex;gap:14px}
+.sic{width:42px;height:42px;border:1px solid rgba(250,250,248,.14);display:flex;align-items:center;justify-content:center;color:rgba(250,250,248,.45);text-decoration:none;font-size:13px;transition:all .3s}
+.sic:hover{border-color:var(--nude);color:var(--nude)}
+.fbot{background:var(--charcoal);padding:18px 80px;border-top:1px solid rgba(250,250,248,.07);display:flex;justify-content:space-between}
+.fbot p{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.22em;color:rgba(250,250,248,.28);text-transform:uppercase}
+.wa-float{position:fixed;bottom:30px;right:30px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.35);transition:transform .3s,box-shadow .3s;cursor:pointer;opacity:0;animation:wafade .4s 2s forwards}
+.wa-float:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.45)}
+.wa-float:active{transform:scale(0.96)}
+@keyframes wafade{to{opacity:1}}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+.nav-pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;padding:0;list-style:none;gap:0;background:transparent}
+.nav-pill-item{position:relative;z-index:1}
+.nav-pill-item a{display:block;font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:7px 15px;transition:color 200ms var(--ease-out-quart);white-space:nowrap}
+.nav-pill-item:hover a{color:var(--white)}
+.nav-pill-item.active a{color:var(--terra)}
+.nav-pill-cursor{position:absolute;z-index:0;top:4px;height:calc(100% - 8px);border-radius:50px;background:var(--charcoal);pointer-events:none;opacity:0;transition:left 280ms var(--ease-out-expo),width 280ms var(--ease-out-expo),opacity 180ms}
+/* LE JOUR J — fond blanc */
+.cband{background:var(--white)!important}
+.cband h2{color:var(--charcoal)!important}
+.cband h2 em{color:var(--terra)!important}
+.cband p{color:var(--taupe)!important}
+.cband .sl-lbl{color:var(--nude)!important}
+.cband .bl{background:var(--charcoal)!important;background-image:none!important;color:var(--white)!important}
+.cband .bl:hover{background:var(--terra)!important}
+/* FONDU CONTINU ENTRE SECTIONS */
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:90px;background:linear-gradient(to bottom,transparent,var(--white));pointer-events:none;z-index:3}
+/* gradient cream supprimé */
+.footer-bridge{display:none}
+@media(pointer:coarse){}
+/* CIRCULAR SERVICES GALLERY — pilotée par scroll */
+.svc-scroll{position:relative;height:340vh;background:var(--cream)}
+.svc-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.svc-inner{width:100%;max-width:1260px;text-align:center;padding:70px 80px 0}
+.svc-gallery{position:relative;height:470px;perspective:1700px;margin:34px 0 0;touch-action:pan-y}
+.svc-stage{position:relative;width:100%;height:100%;transform-style:preserve-3d;will-change:transform}
+.svc-card{position:absolute;left:50%;top:50%;width:340px;height:410px;margin-left:-170px;margin-top:-205px;background:var(--white);padding:50px 40px;box-shadow:0 22px 60px rgba(44,36,32,.10);overflow:hidden;backface-visibility:hidden;text-align:left}
+.svc-card::before{content:'';position:absolute;top:0;left:40px;width:44px;height:2px;background:var(--terra)}
+.svc-card .sn{font-family:'Cormorant Garamond',serif;font-size:130px;font-weight:300;color:var(--cream);line-height:1;position:absolute;bottom:-24px;right:18px;pointer-events:none;user-select:none;z-index:0}
+.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;margin-bottom:14px;margin-top:22px;position:relative;z-index:1;color:var(--charcoal)}
+.svc-card .qt{font-style:italic;color:var(--terra);margin-bottom:14px;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.4;position:relative;z-index:1}
+.svc-card .ds{font-family:'EB Garamond',serif;font-size:14px;line-height:1.75;color:var(--taupe);position:relative;z-index:1}
+.svc-card .pr{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--terra);position:absolute;bottom:40px;left:40px;z-index:1}
+.svc-progress{width:130px;height:2px;background:var(--blush);margin:26px auto 0;border-radius:2px;overflow:hidden}
+.svc-progress span{display:block;height:100%;width:25%;background:var(--terra);border-radius:2px;transition:width 140ms linear}
+.svc-hint{text-align:center;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--nude);margin-top:14px}
+@media(max-width:768px){.svc-scroll{height:300vh}.svc-inner{padding:96px 24px 0}.svc-gallery{height:430px;perspective:1100px}.svc-card{width:286px;margin-left:-143px;padding:42px 32px}}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}section.s{opacity:1;transform:none;clip-path:none}}
+@media(max-width:768px){
+  nav{padding:10px 20px;top:12px;width:calc(100% - 24px)}
+  .nav-logo-img{height:42px}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:36px;z-index:999}
+  .nav-links.open{display:flex}
+  .hbg{display:flex;z-index:1001}
+  .nav-cta{font-size:9px;padding:9px 18px}
+  .page-hero{padding:130px 24px 70px;min-height:50vh}
+  section.s{padding:70px 24px!important}
+  .stage{grid-template-columns:1fr!important}
+  .viewer{height:380px!important}
+  .svc-grid{grid-template-columns:1fr!important}
+  footer{grid-template-columns:1fr;gap:30px;padding:44px 24px}
+  .fbot{padding:18px 24px;flex-direction:column;gap:6px;text-align:center}
+  .cband{padding:70px 24px}
+}
+</style>
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="logo_umel_couture.webp" alt="Umel Couture" class="nav-logo-img"></a>
+  <ul class="nav-pill" id="navPill">
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="notre-histoire.html">Notre Histoire</a></li>
+    <li class="nav-pill-item active" onmouseenter="navPillHover(this)"><a href="nos-robes-services.html">Nos Robes</a></li>
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="galerie.html">Galerie</a></li>
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="contact.html">Contact</a></li>
+    <span class="nav-pill-cursor" id="navPillCursor"></span>
+  </ul>
+  <a href="contact.html" class="nav-cta">Prendre rendez-vous</a>
+  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO DE PAGE -->
+<div class="page-hero">
+  <div>
+    <span class="hl">Nos Robes &amp; Services</span>
+    <h1>Chaque prestation, pensée<br><em>avec la même exigence.</em></h1>
+    <p class="hs">Peu importe le service choisi — vous êtes accompagnée du début à la fin.</p>
+  </div>
+</div>
+
+<!-- VIEWER 360° -->
+<section class="s" style="background:var(--cream);padding:0" id="collection">
+  <div style="max-width:1260px;margin:0 auto;padding:80px">
+    <div style="text-align:center;margin-bottom:70px">
+      <span class="sl-lbl">Nos Créations</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,68px);font-weight:300;line-height:1.1">Chaque robe,<br><em style="font-style:italic;color:var(--terra)">une histoire unique</em></h2>
+      <p style="font-family:'EB Garamond',serif;font-size:16px;color:var(--taupe);margin-top:18px;line-height:1.85">Faites défiler pour découvrir la robe à 360° — explorez chaque détail, chaque broderie, chaque courbe.</p>
+    </div>
+    <div class="stage" style="display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center">
+      <div class="viewer" style="position:relative;height:680px;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 36px 90px rgba(44,36,32,.07);overflow:hidden">
+        <svg id="rsvg" style="width:240px;height:480px;transition:transform .05s linear;will-change:transform" viewBox="0 0 260 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F2EDE6"/><stop offset="50%" stop-color="#FAFAF8"/><stop offset="100%" stop-color="#E8C9BC"/></linearGradient>
+            <filter id="sg"><feGaussianBlur stdDeviation="2.5" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+          </defs>
+          <ellipse cx="130" cy="76" rx="44" ry="50" fill="url(#rg)" stroke="#D4A99A" stroke-width="0.6" filter="url(#sg)"/>
+          <path d="M86 108 Q91 128 89 152 L171 152 Q169 128 174 108 Q151 122 130 121 Q109 122 86 108Z" fill="url(#rg)" stroke="#D4A99A" stroke-width="0.6"/>
+          <path d="M89 152 Q76 196 46 276 Q21 356 11 476 Q71 486 130 488 Q189 486 249 476 Q239 356 214 276 Q184 196 171 152Z" fill="url(#rg)" stroke="#D4A99A" stroke-width="0.6" filter="url(#sg)"/>
+          <path d="M101 122 Q115 132 130 130 Q145 132 159 122" stroke="#C4756A" stroke-width="0.9" fill="none" opacity="0.65"/>
+          <path d="M96 132 Q113 144 130 142 Q147 144 164 132" stroke="#C4756A" stroke-width="0.9" fill="none" opacity="0.5"/>
+          <path d="M93 143 Q112 156 130 154 Q148 156 167 143" stroke="#C4756A" stroke-width="0.9" fill="none" opacity="0.4"/>
+          <path d="M89 455 Q101 496 130 506 Q159 496 171 455" stroke="#D4A99A" stroke-width="1.1" fill="none" opacity="0.5"/>
+          <path d="M111 198 Q106 298 91 416" stroke="#D4A99A" stroke-width="0.6" fill="none" opacity="0.55"/>
+          <path d="M130 193 Q130 308 130 428" stroke="#D4A99A" stroke-width="0.6" fill="none" opacity="0.55"/>
+          <path d="M149 198 Q154 298 169 416" stroke="#D4A99A" stroke-width="0.6" fill="none" opacity="0.55"/>
+          <path d="M96 58 Q89 44 86 34 Q96 27 109 33 Q117 48 114 60Z" fill="url(#rg)" stroke="#D4A99A" stroke-width="0.6"/>
+          <path d="M164 58 Q171 44 174 34 Q164 27 151 33 Q143 48 146 60Z" fill="url(#rg)" stroke="#D4A99A" stroke-width="0.6"/>
+          <circle cx="130" cy="87" r="2.2" fill="#D4A99A" opacity="0.75"/>
+          <circle cx="120" cy="97" r="1.6" fill="#D4A99A" opacity="0.6"/>
+          <circle cx="140" cy="97" r="1.6" fill="#D4A99A" opacity="0.6"/>
+          <ellipse cx="109" cy="295" rx="7" ry="58" fill="white" opacity="0.12" transform="rotate(-9 109 295)"/>
+        </svg>
+        <div style="position:absolute;bottom:20px;left:20px;right:20px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:7px">
+            <span id="rang" style="font-family:Jost,sans-serif;font-size:9.5px;letter-spacing:.28em;color:var(--taupe)">0°</span>
+            <span style="font-family:Jost,sans-serif;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)">Rotation</span>
+          </div>
+          <div style="width:100%;height:1px;background:var(--blush)"><div id="rpf" style="height:100%;background:linear-gradient(to right,var(--nude),var(--terra));width:0%;transition:width .08s"></div></div>
+        </div>
+      </div>
+      <div>
+        <span class="sl-lbl" id="rlbl">Nos Créations</span>
+        <h3 id="rtitle" style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,2.8vw,42px);font-weight:300;line-height:1.2;margin-bottom:20px">La <em style="font-style:italic">Silhouette</em><br>Sirène</h3>
+        <p id="rdesc" style="font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.9;color:var(--taupe);margin-bottom:28px">Un corset brodé de dentelle fine, une jupe qui épouse chaque courbe avant de s'évaser en traîne vaporeuse. Élégance absolue pour la mariée qui veut se sentir enveloppée et libre.</p>
+        <div id="rtags" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px"><span class="rtag">Dentelle française</span><span class="rtag">Corset sur mesure</span><span class="rtag">Traîne vaporeuse</span></div>
+        <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.36em;text-transform:uppercase;color:var(--charcoal);display:flex;align-items:center;gap:10px;margin-bottom:36px"><span style="display:block;width:28px;height:1px;background:var(--nude)"></span>↕ Faites défiler pour faire tourner la robe</div>
+        <a href="contact.html" class="bp">Essayer cette robe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOS PRESTATIONS — galerie circulaire pilotée par scroll -->
+<section class="svc-scroll" id="svcScroll">
+  <div class="svc-sticky">
+    <div class="svc-inner">
+      <span class="sl-lbl">Nos prestations</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;margin-bottom:10px">Quatre services.<br><em style="font-style:italic;color:var(--terra)">Une même attention.</em></h2>
+      <p style="font-family:'EB Garamond',serif;font-size:16px;color:var(--taupe);line-height:1.85;max-width:560px;margin:0 auto">Chaque prestation chez Umel est pensée avec le même niveau d'attention. Vous êtes accompagnée du début à la fin.</p>
+      <div class="svc-gallery" id="svcGallery">
+        <div class="svc-stage" id="svcStage">
+          <article class="svc-card">
+            <span class="sn">01</span>
+            <h3>Création sur mesure</h3>
+            <p class="qt">"On ne part jamais d'une robe. On part de vous."</p>
+            <p class="ds">Une inspiration, une matière, un détail aperçu quelque part. Haut d'un modèle, bas d'un autre, dentelle spécifique — ou une robe créée à partir d'une photo. Plusieurs essayages jusqu'à la perfection.</p>
+            <span class="pr">Sur devis — en maison</span>
+          </article>
+          <article class="svc-card">
+            <span class="sn">02</span>
+            <h3>Retouches</h3>
+            <p class="qt">"Votre robe mérite d'être parfaite. Peu importe son origine."</p>
+            <p class="ds">Umel retouche les robes ne venant pas de la maison. Envoyez une vidéo portée via WhatsApp au 07 49 50 75 57 pour une première estimation. Devis ajusté en cabine.</p>
+            <span class="pr">À partir de 250€</span>
+          </article>
+          <article class="svc-card">
+            <span class="sn">03</span>
+            <h3>Location</h3>
+            <p class="qt">"L'exigence d'une maison de couture. Une autre manière de vivre sa robe."</p>
+            <p class="ds">Les modèles du showroom sont disponibles à la location. Coupes : princesse, sirène, trapèze. Sélectionnés avec le même soin que les créations sur mesure.</p>
+            <span class="pr">À partir de 1 000€</span>
+          </article>
+          <article class="svc-card">
+            <span class="sn">04</span>
+            <h3>Pressing spécialisé</h3>
+            <p class="qt">"Une robe conserve des souvenirs. Pas des traces."</p>
+            <p class="ds">Traitement soigné pour préserver les matières les plus délicates — tissus, dentelles, broderies. Pour le grand jour, et pour les années qui suivent.</p>
+            <span class="pr">À partir de 150€</span>
+          </article>
+        </div>
+      </div>
+      <div class="svc-progress"><span id="svcProgFill"></span></div>
+      <div class="svc-hint" id="svcHint">Service 1 sur 4</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cband">
+  <span class="sl-lbl">Rendez-vous</span>
+  <h2>Prenez rendez-vous —<br><em>découverte en maison</em></h2>
+  <p>Venez nous rencontrer à Servon. On écoute d'abord. On crée ensuite.</p>
+  <a href="contact.html" class="bl">Réserver mon rendez-vous</a>
+</section>
+
+<div class="footer-bridge"></div>
+<!-- FOOTER -->
+<footer>
+  <div class="fb">
+    <img src="logo_umel_couture.webp" alt="Umel Couture" style="height:84px;width:auto;display:block;margin-bottom:14px;filter:brightness(0) invert(1);opacity:0.9">
+    <p><em>La robe qui vous ressemble. Vraiment.</em></p>
+  </div>
+  <div class="fl">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="notre-histoire.html">Notre Histoire</a></li>
+      <li><a href="nos-robes-services.html">Nos Robes &amp; Services</a></li>
+      <li><a href="sur-mesure.html">Sur mesure</a></li>
+      <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Conditions générales</a></li>
+    </ul>
+  </div>
+  <div class="fsoc">
+    <h4>Suivez-nous</h4>
+    <div class="si2">
+      <a href="#" class="sic">IG</a>
+      <a href="#" class="sic">FB</a>
+      <a href="#" class="sic">TK</a>
+    </div>
+    <p style="font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.38);margin-top:22px;line-height:1.85">Rejoignez notre communauté et inspirez-vous des plus belles créations.</p>
+  </div>
+</footer>
+<div class="fbot">
+  <p>© Umel Couture 2026 — Tous droits réservés</p>
+  <p>Servon · Seine-et-Marne</p>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/33749507557" class="wa-float" title="Nous contacter sur WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80));
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.s').forEach(s=>ro.observe(s));
+const hbg=document.getElementById('hbg');
+if(hbg){hbg.addEventListener('click',()=>{document.querySelector('.nav-links').classList.toggle('open');hbg.classList.toggle('open');});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.nav-links').classList.remove('open');hbg.classList.remove('open');}));}
+function navPillHover(el){var c=document.getElementById('navPillCursor');if(!c)return;c.style.width=el.offsetWidth+'px';c.style.left=el.offsetLeft+'px';c.style.opacity='1';}
+var navPill=document.getElementById('navPill');
+if(navPill)navPill.addEventListener('mouseleave',function(){var c=document.getElementById('navPillCursor');if(c)c.style.opacity='0';});
+// CIRCULAR SERVICES GALLERY — pilotée par le scroll
+(function(){
+  var stage=document.getElementById('svcStage');if(!stage)return;
+  var scrollEl=document.getElementById('svcScroll');
+  var fill=document.getElementById('svcProgFill');
+  var hint=document.getElementById('svcHint');
+  var cards=[].slice.call(stage.querySelectorAll('.svc-card'));
+  var nb=cards.length,st=360/nb,radius=window.innerWidth<768?300:380,ticking=false;
+  function layout(){radius=window.innerWidth<768?300:380;cards.forEach(function(c,i){c.style.transform='rotateY('+(i*st)+'deg) translateZ('+radius+'px)';});}
+  function render(rot){
+    stage.style.transform='rotateY('+rot+'deg)';
+    cards.forEach(function(c,i){
+      var a=((i*st+rot)%360+360)%360;var d=a>180?360-a:a;
+      c.style.opacity=Math.max(0.18,1-d/150).toFixed(3);
+      c.style.pointerEvents=d<46?'auto':'none';
+    });
+  }
+  function update(){
+    var rect=scrollEl.getBoundingClientRect();
+    var total=scrollEl.offsetHeight-window.innerHeight;
+    var p=total>0?Math.max(0,Math.min(1,(-rect.top)/total)):0;
+    render(-p*270);
+    if(fill)fill.style.width=(25+p*75)+'%';
+    if(hint)hint.textContent='Service '+Math.min(4,Math.floor(p*3.999)+1)+' sur 4';
+  }
+  layout();update();
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){update();ticking=false;});ticking=true;}},{passive:true});
+  window.addEventListener('resize',function(){layout();update();});
+})();
+const views=[
+  {t:'La <em>Silhouette</em><br>Sirène',d:"Un corset brodé de dentelle fine, une jupe qui épouse chaque courbe avant de s'évaser en traîne vaporeuse. Élégance absolue pour la mariée qui veut se sentir enveloppée et libre.",tags:['Dentelle française','Corset sur mesure','Traîne vaporeuse']},
+  {t:'Le <em>Profil</em><br>de Soie',d:"Vue de profil, la traîne révèle toute sa grâce. La silhouette s'étire, légère comme une promesse. Chaque détail du dos est brodé avec une précision de joaillier.",tags:['Traîne cathédrale','Dos nu','Broderies perles']},
+  {t:'Le <em>Dos</em><br>Sculpté',d:"Une cascade de boutons recouverts et d'appliques florales. Un chef-d'œuvre caché, révélé à ceux qui vous suivent vers l'autel.",tags:['Boutons nacre','Appliques florales','Décolleté dos']},
+  {t:"L'<em>Autre</em><br>Profil",d:"Le mouvement de la jupe en contre-plongée révèle la légèreté du tulle superposé. Quatre épaisseurs de soie pour un volume maîtrisé, élégant, intemporel.",tags:['Tulle français','Volume maîtrisé','Soie naturelle']}
+];
+const rsvg=document.getElementById('rsvg');
+const rpf=document.getElementById('rpf');
+const rang=document.getElementById('rang');
+const rt=document.getElementById('rtitle');
+const rd=document.getElementById('rdesc');
+const rtg=document.getElementById('rtags');
+const coll=document.getElementById('collection');
+let tick=false;
+function updateRobe(p){
+  const angle=Math.round(p*360)%360;
+  const theta=p*2*Math.PI;
+  rsvg.style.transform='scaleX('+Math.cos(theta).toFixed(4)+')';
+  rang.textContent=angle+'°';
+  rpf.style.width=(p*100)+'%';
+  const vi=Math.floor((angle/360)*4)%4;
+  const v=views[vi];
+  rt.innerHTML=v.t;
+  rd.textContent=v.d;
+  rtg.innerHTML=v.tags.map(t=>'<span class="rtag">'+t+'</span>').join('');
+}
+window.addEventListener('scroll',()=>{
+  if(!tick){requestAnimationFrame(()=>{
+    if(!coll)return;
+    const r=coll.getBoundingClientRect();
+    const sh=coll.offsetHeight;
+    const scrolled=-r.top;
+    const start=-sh*0.05;
+    const end=sh*0.75;
+    if(scrolled>=start&&scrolled<=end){
+      const p=Math.max(0,Math.min(1,(scrolled-start)/(end-start)));
+      updateRobe(p);
+    }
+    tick=false;
+  });tick=true;}
+},{passive:true});
+</script>
+</body>
+</html>

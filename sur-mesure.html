@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sur Mesure | Umel Couture — Création robe de mariée Servon, Seine-et-Marne</title>
+<meta name="description" content="Le sur-mesure chez Umel Couture — pas une option premium, le point de départ. Chaque robe commence par une conversation. Atelier à Servon (77).">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FAFAF8;--cream:#F2EDE6;--nude:#D4A99A;--blush:#E8C9BC;--charcoal:#2C2420;--taupe:#8A7F78;--terra:#C4756A;--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1)}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--charcoal);font-family:'EB Garamond',serif;overflow-x:hidden}
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:36px;background:rgba(250,250,248,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(212,169,154,.22);border-radius:50px;width:calc(100% - 48px);max-width:1100px;transition:all .4s}
+.scrolled{background:rgba(250,250,248,.96)!important;border-color:rgba(212,169,154,.4)!important;box-shadow:0 8px 32px rgba(44,36,32,.08)!important}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo-img{height:52px;width:auto;display:block;object-fit:contain}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;position:relative;padding-bottom:3px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:1px;background:var(--nude);transition:width .4s var(--ease-out-expo),left .4s var(--ease-out-expo)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;left:0}
+.nav-links a.active{color:var(--terra)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;cursor:pointer}
+.hbg span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s}
+.nav-cta{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:11px 26px;border:none;transition:all .3s;text-decoration:none;display:inline-block;border-radius:4px}
+.nav-cta:hover{background:var(--terra)}
+.page-hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:160px 80px 90px;background:linear-gradient(135deg,#F7F2EC 0%,#FAFAF8 55%,#EDD5C8 100%);position:relative}
+.page-hero .hl{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.58em;text-transform:uppercase;color:var(--taupe);margin-bottom:24px;display:block;opacity:0;animation:fu .8s .2s forwards}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,100px);font-weight:300;line-height:.95;color:var(--charcoal);opacity:0;animation:fu .9s .4s forwards}
+.page-hero h1 em{font-style:italic;color:var(--terra)}
+.page-hero .hs{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;font-style:italic;color:var(--taupe);margin-top:18px;opacity:0;animation:fu .8s .6s forwards}
+section.s{padding:110px 80px;opacity:0;transition:opacity 1s var(--ease-out-expo)}
+section.s.vis{opacity:1}
+.sl-lbl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.56em;text-transform:uppercase;color:var(--nude);margin-bottom:18px;display:block}
+.bp{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--white);background:var(--charcoal);background-image:linear-gradient(var(--terra) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:6px;text-decoration:none;transition:background-position 480ms var(--ease-out-expo),border-color 300ms;display:inline-block}
+.bp:hover{background-position:0 0;border-color:var(--terra)}
+.cband{background:var(--charcoal);padding:110px 80px;text-align:center}
+.cband h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,68px);font-weight:300;color:var(--white);margin-bottom:14px;line-height:1.1}
+.cband h2 em{font-style:italic;color:var(--nude)}
+.cband p{font-family:'EB Garamond',serif;font-size:17px;color:rgba(250,250,248,.55);margin-bottom:44px}
+.bl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);background:var(--white);background-image:linear-gradient(var(--nude) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;padding:16px 44px;border-radius:6px;text-decoration:none;display:inline-block;transition:background-position 480ms var(--ease-out-expo)}
+.bl:hover{background-position:0 0}
+footer{background:var(--charcoal);padding:56px 80px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px}
+.fb .ft{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.46em;color:var(--white);text-transform:uppercase;margin-bottom:14px;display:block}
+.fb p{font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.55);line-height:1.85}
+.fl h4,.fsoc h4{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;color:var(--nude);margin-bottom:22px}
+.fl ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fl a{font-family:'EB Garamond',serif;font-size:14.5px;color:rgba(250,250,248,.55);text-decoration:none;transition:color .3s}
+.fl a:hover{color:var(--nude)}
+.si2{display:flex;gap:14px}
+.sic{width:42px;height:42px;border:1px solid rgba(250,250,248,.14);display:flex;align-items:center;justify-content:center;color:rgba(250,250,248,.45);text-decoration:none;font-size:13px;transition:all .3s}
+.sic:hover{border-color:var(--nude);color:var(--nude)}
+.fbot{background:var(--charcoal);padding:18px 80px;border-top:1px solid rgba(250,250,248,.07);display:flex;justify-content:space-between}
+.fbot p{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.22em;color:rgba(250,250,248,.28);text-transform:uppercase}
+.wa-float{position:fixed;bottom:30px;right:30px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.35);transition:transform .3s,box-shadow .3s;cursor:pointer;opacity:0;animation:wafade .4s 2s forwards}
+.wa-float:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.45)}
+.wa-float:active{transform:scale(0.96)}
+@keyframes wafade{to{opacity:1}}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+.nav-pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;padding:0;list-style:none;gap:0;background:transparent}
+.nav-pill-item{position:relative;z-index:1}
+.nav-pill-item a{display:block;font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:7px 15px;transition:color 200ms var(--ease-out-quart);white-space:nowrap}
+.nav-pill-item:hover a{color:var(--white)}
+.nav-pill-item.active a{color:var(--terra)}
+.nav-pill-cursor{position:absolute;z-index:0;top:4px;height:calc(100% - 8px);border-radius:50px;background:var(--charcoal);pointer-events:none;opacity:0;transition:left 280ms var(--ease-out-expo),width 280ms var(--ease-out-expo),opacity 180ms}
+/* LE JOUR J — fond blanc */
+.cband{background:var(--white)!important}
+.cband h2{color:var(--charcoal)!important}
+.cband h2 em{color:var(--terra)!important}
+.cband p{color:var(--taupe)!important}
+.cband .sl-lbl{color:var(--nude)!important}
+.cband .bl{background:var(--charcoal)!important;background-image:none!important;color:var(--white)!important}
+.cband .bl:hover{background:var(--terra)!important}
+/* FONDU CONTINU ENTRE SECTIONS */
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:90px;background:linear-gradient(to bottom,transparent,var(--white));pointer-events:none;z-index:3}
+/* gradient cream supprimé */
+.footer-bridge{display:none}
+@media(pointer:coarse){}
+/* Info cards stagger */
+.info-grid > div{opacity:0;transform:translateY(14px);transition:opacity 0.65s var(--ease-out-expo),transform 0.65s var(--ease-out-expo);transition-delay:calc(var(--ii,0) * 110ms)}
+.s.vis .info-grid > div{opacity:1;transform:none}
+/* Prose stagger */
+.prose-section p{opacity:0;transform:translateY(10px);transition:opacity 0.7s var(--ease-out-expo),transform 0.7s var(--ease-out-expo);transition-delay:calc(var(--pi,0) * 150ms)}
+.vis .prose-section p{opacity:1;transform:none}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}section.s{opacity:1;transform:none;clip-path:none}}
+@media(max-width:768px){
+  nav{padding:10px 20px;top:12px;width:calc(100% - 24px)}
+  .nav-logo-img{height:42px}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:36px;z-index:999}
+  .nav-links.open{display:flex}
+  .hbg{display:flex;z-index:1001}
+  .nav-cta{font-size:9px;padding:9px 18px}
+  .page-hero{padding:130px 24px 70px;min-height:55vh}
+  section.s{padding:70px 24px!important}
+  .info-grid{grid-template-columns:1fr!important}
+  footer{grid-template-columns:1fr;gap:30px;padding:44px 24px}
+  .fbot{padding:18px 24px;flex-direction:column;gap:6px;text-align:center}
+  .cband{padding:70px 24px}
+}
+</style>
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="logo_umel_couture.webp" alt="Umel Couture" class="nav-logo-img"></a>
+  <ul class="nav-pill" id="navPill">
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="notre-histoire.html">Notre Histoire</a></li>
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="nos-robes-services.html">Nos Robes</a></li>
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="galerie.html">Galerie</a></li>
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="contact.html">Contact</a></li>
+    <span class="nav-pill-cursor" id="navPillCursor"></span>
+  </ul>
+  <a href="contact.html" class="nav-cta">Prendre rendez-vous</a>
+  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO DE PAGE -->
+<div class="page-hero">
+  <div>
+    <span class="hl">Sur Mesure</span>
+    <h1>Votre robe n'a jamais<br><em>existé avant vous.</em></h1>
+    <p class="hs">Elle n'existera jamais pour une autre.</p>
+  </div>
+</div>
+
+<!-- PHILOSOPHIE SUR MESURE -->
+<section class="s">
+  <div class="prose-section" style="max-width:740px;margin:0 auto;text-align:center">
+    <span class="sl-lbl">Notre approche</span>
+    <p style="--pi:0;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,32px);font-weight:300;line-height:1.4;color:var(--charcoal);margin-bottom:36px">Chez Umel Couture, le sur-mesure n'est pas une option premium. C'est le point de départ.</p>
+    <div style="width:48px;height:1px;background:var(--nude);margin:0 auto 36px"></div>
+    <p style="--pi:1;font-family:'EB Garamond',serif;font-size:18px;line-height:2;color:var(--taupe);margin-bottom:24px">Chaque robe commence par une conversation. On écoute vos envies, on observe votre silhouette, on comprend ce qui vous ressemble vraiment. Puis on compose — haut d'un modèle, bas d'un autre, dentelle particulière, couleur spécifique, détails entièrement personnalisés.</p>
+    <p style="--pi:2;font-family:'EB Garamond',serif;font-size:18px;line-height:2;color:var(--taupe);margin-bottom:24px">Vous pouvez également venir avec une photo d'inspiration. On s'en empare et on construit à partir de là.</p>
+    <p style="--pi:3;font-family:'EB Garamond',serif;font-size:18px;line-height:2;color:var(--taupe);margin-bottom:24px">Plusieurs essayages sont réalisés en boutique pour valider coupes, volumes et matières directement sur vous — grâce aux modèles présents au showroom. Chaque détail est ajusté jusqu'à ce que ce soit juste.</p>
+    <p style="--pi:4;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-weight:300;font-style:italic;color:var(--terra);line-height:1.5;margin-top:8px">Juste pour la silhouette. Juste pour la personnalité.<br>Juste pour ce moment.</p>
+  </div>
+</section>
+
+<!-- INFORMATIONS PRATIQUES -->
+<section class="s" style="background:var(--cream);padding:90px 80px">
+  <div style="max-width:1260px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:60px">
+      <span class="sl-lbl">Informations pratiques</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,50px);font-weight:300">Tout ce qu'il faut <em style="font-style:italic;color:var(--terra)">savoir</em></h2>
+    </div>
+    <div class="info-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+      <div style="--ii:0;background:var(--white);padding:50px 40px;text-align:center">
+        <div style="font-size:32px;margin-bottom:20px">🕐</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:14px">Horaires</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe)">Mardi au vendredi<br>10h – 17h<br><em>Sur rendez-vous uniquement</em></p>
+      </div>
+      <div style="--ii:1;background:var(--white);padding:50px 40px;text-align:center">
+        <div style="font-size:32px;margin-bottom:20px">📍</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:14px">Adresse</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe)">12 rue Georges Truffaut<br>77170 Servon<br>Seine-et-Marne</p>
+      </div>
+      <div style="--ii:2;background:var(--white);padding:50px 40px;text-align:center">
+        <div style="font-size:32px;margin-bottom:20px">📞</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:14px">Contact</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe)"><a href="https://wa.me/33749507557" style="color:var(--terra);text-decoration:none">07 49 50 75 57</a><br>WhatsApp<br><em>Devis sur demande</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS CLIENTES (2) -->
+<section class="s" style="padding:90px 80px">
+  <div style="max-width:900px;margin:0 auto;text-align:center;margin-bottom:50px">
+    <span class="sl-lbl">Elles l'ont vécu</span>
+    <p style="font-family:'EB Garamond',serif;font-size:15px;letter-spacing:.22em;color:var(--taupe)">★★★★★ · 4,8 sur Google · 331 avis</p>
+  </div>
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px">
+    <div style="background:var(--cream);padding:36px 30px">
+      <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe);font-style:italic;margin-bottom:20px">"Je suis venue avec juste une vague idée. Umi a compris en cinq minutes ce que je voulais vraiment. La robe était exactement moi."</p>
+      <span style="font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--terra)">Anaïs B.</span>
+      <span style="display:block;font-size:13px;color:var(--nude);margin-top:6px">★★★★★</span>
+    </div>
+    <div style="background:var(--cream);padding:36px 30px">
+      <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe);font-style:italic;margin-bottom:20px">"Plusieurs essayages, beaucoup de patience, zéro pression. Melissa m'a guidée sans jamais m'imposer quoi que ce soit. Un vrai bonheur."</p>
+      <span style="font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--terra)">Julie M.</span>
+      <span style="display:block;font-size:13px;color:var(--nude);margin-top:6px">★★★★★</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cband">
+  <span class="sl-lbl">Votre robe vous attend</span>
+  <h2>Prendre rendez-vous —<br><em>c'est commencer</em></h2>
+  <p>Mardi au vendredi, 10h–17h. Sur rendez-vous uniquement.<br>Servon, Seine-et-Marne.</p>
+  <a href="contact.html" class="bl">Réserver mon rendez-vous</a>
+</section>
+
+<div class="footer-bridge"></div>
+<!-- FOOTER -->
+<footer>
+  <div class="fb">
+    <img src="logo_umel_couture.webp" alt="Umel Couture" style="height:84px;width:auto;display:block;margin-bottom:14px;filter:brightness(0) invert(1);opacity:0.9">
+    <p><em>La robe qui vous ressemble. Vraiment.</em></p>
+  </div>
+  <div class="fl">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="notre-histoire.html">Notre Histoire</a></li>
+      <li><a href="nos-robes-services.html">Nos Robes &amp; Services</a></li>
+      <li><a href="sur-mesure.html">Sur mesure</a></li>
+      <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Conditions générales</a></li>
+    </ul>
+  </div>
+  <div class="fsoc">
+    <h4>Suivez-nous</h4>
+    <div class="si2">
+      <a href="#" class="sic">IG</a>
+      <a href="#" class="sic">FB</a>
+      <a href="#" class="sic">TK</a>
+    </div>
+    <p style="font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.38);margin-top:22px;line-height:1.85">Rejoignez notre communauté et inspirez-vous des plus belles créations.</p>
+  </div>
+</footer>
+<div class="fbot">
+  <p>© Umel Couture 2026 — Tous droits réservés</p>
+  <p>Servon · Seine-et-Marne</p>
+</div>
+
+<a href="https://wa.me/33749507557" class="wa-float" title="Nous contacter sur WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80));
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.s').forEach(s=>ro.observe(s));
+const hbg=document.getElementById('hbg');
+if(hbg){hbg.addEventListener('click',()=>{document.querySelector('.nav-links').classList.toggle('open');hbg.classList.toggle('open');});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.nav-links').classList.remove('open');hbg.classList.remove('open');}));}
+function navPillHover(el){var c=document.getElementById('navPillCursor');if(!c)return;c.style.width=el.offsetWidth+'px';c.style.left=el.offsetLeft+'px';c.style.opacity='1';}
+var navPill=document.getElementById('navPill');
+if(navPill)navPill.addEventListener('mouseleave',function(){var c=document.getElementById('navPillCursor');if(c)c.style.opacity='0';});
+</script>
+</body>
+</html>

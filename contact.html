@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact &amp; Rendez-vous | Umel Couture — Servon, Seine-et-Marne</title>
+<meta name="description" content="Prenez rendez-vous chez Umel Couture — 12 rue Georges Truffaut, 77170 Servon. Mardi–Vendredi, 10h–17h. WhatsApp : 07 49 50 75 57.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FAFAF8;--cream:#F2EDE6;--nude:#D4A99A;--blush:#E8C9BC;--charcoal:#2C2420;--taupe:#8A7F78;--terra:#C4756A;--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1)}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--charcoal);font-family:'EB Garamond',serif;overflow-x:hidden}
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:36px;background:rgba(250,250,248,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(212,169,154,.22);border-radius:50px;width:calc(100% - 48px);max-width:1100px;transition:all .4s}
+.scrolled{background:rgba(250,250,248,.96)!important;border-color:rgba(212,169,154,.4)!important;box-shadow:0 8px 32px rgba(44,36,32,.08)!important}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo-img{height:52px;width:auto;display:block;object-fit:contain}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;position:relative;padding-bottom:3px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:1px;background:var(--nude);transition:width .4s var(--ease-out-expo),left .4s var(--ease-out-expo)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;left:0}
+.nav-links a.active{color:var(--terra)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;cursor:pointer}
+.hbg span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s}
+.nav-cta{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:11px 26px;border:none;transition:all .3s;text-decoration:none;display:inline-block;border-radius:4px}
+.nav-cta:hover{background:var(--terra)}
+.page-hero{min-height:55vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:160px 80px 80px;background:linear-gradient(135deg,#F7F2EC 0%,#FAFAF8 55%,#EDD5C8 100%);position:relative}
+.page-hero .hl{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.58em;text-transform:uppercase;color:var(--taupe);margin-bottom:24px;display:block;opacity:0;animation:fu .8s .2s forwards}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,100px);font-weight:300;line-height:.95;color:var(--charcoal);opacity:0;animation:fu .9s .4s forwards}
+.page-hero h1 em{font-style:italic;color:var(--terra)}
+.page-hero .hs{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,26px);font-weight:300;font-style:italic;color:var(--taupe);margin-top:18px;opacity:0;animation:fu .8s .6s forwards}
+section.s{padding:110px 80px;opacity:0;transition:opacity 1s var(--ease-out-expo)}
+section.s.vis{opacity:1}
+.sl-lbl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.56em;text-transform:uppercase;color:var(--nude);margin-bottom:18px;display:block}
+.bp{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--white);background:var(--charcoal);background-image:linear-gradient(var(--terra) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:6px;text-decoration:none;transition:background-position 480ms var(--ease-out-expo),border-color 300ms;display:inline-block}
+.bp:hover{background-position:0 0;border-color:var(--terra)}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg label{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--taupe)}
+.fg input,.fg select,.fg textarea{font-family:'EB Garamond',serif;font-size:16px;color:var(--charcoal);background:var(--white);border:1px solid var(--blush);padding:13px 18px;outline:none;transition:border-color .3s;resize:none;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--terra)!important;box-shadow:0 0 0 3px rgba(196,117,106,0.1),0 1px 3px rgba(0,0,0,0.05)!important;outline:none!important;transition:border-color 250ms var(--ease-out-quart),box-shadow 250ms var(--ease-out-quart)}
+.cd{display:flex;gap:18px;margin-bottom:28px;align-items:flex-start}
+.cdi{width:38px;height:38px;background:var(--white);border:1px solid var(--blush);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.cdt strong{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);display:block;margin-bottom:5px}
+.cdt span{font-family:'EB Garamond',serif;font-size:15.5px;color:var(--taupe);line-height:1.65;display:block}
+footer{background:var(--charcoal);padding:56px 80px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px}
+.fb .ft{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.46em;color:var(--white);text-transform:uppercase;margin-bottom:14px;display:block}
+.fb p{font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.55);line-height:1.85}
+.fl h4,.fsoc h4{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;color:var(--nude);margin-bottom:22px}
+.fl ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fl a{font-family:'EB Garamond',serif;font-size:14.5px;color:rgba(250,250,248,.55);text-decoration:none;transition:color .3s}
+.fl a:hover{color:var(--nude)}
+.si2{display:flex;gap:14px}
+.sic{width:42px;height:42px;border:1px solid rgba(250,250,248,.14);display:flex;align-items:center;justify-content:center;color:rgba(250,250,248,.45);text-decoration:none;font-size:13px;transition:all .3s}
+.sic:hover{border-color:var(--nude);color:var(--nude)}
+.fbot{background:var(--charcoal);padding:18px 80px;border-top:1px solid rgba(250,250,248,.07);display:flex;justify-content:space-between}
+.fbot p{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.22em;color:rgba(250,250,248,.28);text-transform:uppercase}
+.wa-float{position:fixed;bottom:30px;right:30px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.35);transition:transform .3s,box-shadow .3s;cursor:pointer;opacity:0;animation:wafade .4s 2s forwards}
+.wa-float:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.45)}
+.wa-float:active{transform:scale(0.96)}
+@keyframes wafade{to{opacity:1}}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+/* Map iframe appear */
+iframe{opacity:0;transform:scale(0.98);transition:opacity 0.9s var(--ease-out-expo),transform 0.9s var(--ease-out-expo)}
+.s.vis iframe{opacity:1;transform:none}
+/* Contact info stagger */
+.cd{opacity:0;transform:translateX(-12px);transition:opacity 0.6s var(--ease-out-expo),transform 0.6s var(--ease-out-expo);transition-delay:calc(var(--ci,0) * 100ms)}
+.s.vis .cd{opacity:1;transform:none}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}section.s{opacity:1;transform:none;clip-path:none}}
+.nav-pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;padding:0;list-style:none;gap:0;background:transparent}
+.nav-pill-item{position:relative;z-index:1}
+.nav-pill-item a{display:block;font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:7px 15px;transition:color 200ms var(--ease-out-quart);white-space:nowrap}
+.nav-pill-item:hover a{color:var(--white)}
+.nav-pill-item.active a{color:var(--terra)}
+.nav-pill-cursor{position:absolute;z-index:0;top:4px;height:calc(100% - 8px);border-radius:50px;background:var(--charcoal);pointer-events:none;opacity:0;transition:left 280ms var(--ease-out-expo),width 280ms var(--ease-out-expo),opacity 180ms}
+/* LE JOUR J — fond blanc */
+.cband{background:var(--white)!important}
+.cband h2{color:var(--charcoal)!important}
+.cband h2 em{color:var(--terra)!important}
+.cband p{color:var(--taupe)!important}
+.cband .sl-lbl{color:var(--nude)!important}
+.cband .bl{background:var(--charcoal)!important;background-image:none!important;color:var(--white)!important}
+.cband .bl:hover{background:var(--terra)!important}
+/* FONDU CONTINU ENTRE SECTIONS */
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:90px;background:linear-gradient(to bottom,transparent,var(--white));pointer-events:none;z-index:3}
+/* gradient cream supprimé */
+.footer-bridge{display:none}
+@media(pointer:coarse){}
+@media(max-width:768px){
+  nav{padding:10px 20px;top:12px;width:calc(100% - 24px)}
+  .nav-logo-img{height:42px}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:36px;z-index:999}
+  .nav-links.open{display:flex}
+  .hbg{display:flex;z-index:1001}
+  .nav-cta{font-size:9px;padding:9px 18px}
+  .page-hero{padding:130px 24px 70px;min-height:45vh}
+  section.s{padding:70px 24px!important}
+  .contact-grid{grid-template-columns:1fr!important}
+  footer{grid-template-columns:1fr;gap:30px;padding:44px 24px}
+  .fbot{padding:18px 24px;flex-direction:column;gap:6px;text-align:center}
+}
+</style>
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="logo_umel_couture.webp" alt="Umel Couture" class="nav-logo-img"></a>
+  <ul class="nav-pill" id="navPill">
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="notre-histoire.html">Notre Histoire</a></li>
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="nos-robes-services.html">Nos Robes</a></li>
+    <li class="nav-pill-item" onmouseenter="navPillHover(this)"><a href="galerie.html">Galerie</a></li>
+    <li class="nav-pill-item active" onmouseenter="navPillHover(this)"><a href="contact.html">Contact</a></li>
+    <span class="nav-pill-cursor" id="navPillCursor"></span>
+  </ul>
+  <a href="contact.html" class="nav-cta">Prendre rendez-vous</a>
+  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO DE PAGE -->
+<div class="page-hero">
+  <div>
+    <span class="hl">Contact</span>
+    <h1>Prenez <em>rendez-vous.</em></h1>
+    <p class="hs">Chaque robe commence par une conversation.</p>
+  </div>
+</div>
+
+<!-- CONTACT PRINCIPAL -->
+<section class="s">
+  <div class="contact-grid" style="max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start">
+
+    <!-- Informations -->
+    <div>
+      <span class="sl-lbl">Nous Trouver</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,50px);font-weight:300;margin-bottom:36px">Votre robe vous<br><em style="font-style:italic;color:var(--terra)">attend ici</em></h2>
+      <div class="cd" style="--ci:0">
+        <div class="cdi">📍</div>
+        <div class="cdt"><strong>Adresse</strong><span>12 rue Georges Truffaut<br>77170 Servon, France</span></div>
+      </div>
+      <div class="cd" style="--ci:1">
+        <div class="cdi">📞</div>
+        <div class="cdt"><strong>Téléphone</strong><span><a href="https://wa.me/33749507557" style="color:var(--terra);text-decoration:none">07 49 50 75 57 — WhatsApp</a></span></div>
+      </div>
+      <div class="cd" style="--ci:2">
+        <div class="cdi">🕐</div>
+        <div class="cdt"><strong>Horaires</strong><span>Mardi au vendredi · 10h–17h<br>Sur rendez-vous uniquement</span></div>
+      </div>
+
+      <!-- GOOGLE MAPS -->
+      <div style="margin-top:32px;border:1px solid var(--blush);overflow:hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.4!2d2.5921!3d48.7008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s12+rue+Georges+Truffaut%2C+77170+Servon!5e0!3m2!1sfr!2sfr"
+          width="100%" height="280"
+          style="border:none;filter:saturate(0.65) contrast(1.05)"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Umel Couture — 12 rue Georges Truffaut, 77170 Servon">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div>
+      <span class="sl-lbl">Prendre Rendez-vous</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,42px);font-weight:300;margin-bottom:36px">Commençons<br><em style="font-style:italic;color:var(--terra)">votre histoire</em></h2>
+      <form id="contactForm" style="display:flex;flex-direction:column;gap:18px" onsubmit="event.preventDefault();submitForm()">
+        <div class="fg">
+          <label>Prénom *</label>
+          <input type="text" placeholder="Marie" required>
+        </div>
+        <div class="fg">
+          <label>Email *</label>
+          <input type="email" placeholder="marie@email.com" required>
+        </div>
+        <div class="fg">
+          <label>Téléphone *</label>
+          <input type="tel" placeholder="06 00 00 00 00" pattern="[0-9 +]{9,15}" required>
+        </div>
+        <div class="fg">
+          <label>Type de demande *</label>
+          <select required>
+            <option value="">Choisir...</option>
+            <option value="sur-mesure">Sur mesure</option>
+            <option value="retouche">Retouche</option>
+            <option value="location">Location</option>
+            <option value="pressing">Pressing</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Votre message</label>
+          <textarea rows="4" placeholder="Décrivez votre vision, vos inspirations, vos questions..."></textarea>
+        </div>
+        <button type="submit" class="bp" style="width:fit-content">Envoyer ma demande</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA WHATSAPP -->
+<section class="s" style="background:var(--cream);padding:80px 80px;text-align:center">
+  <div style="max-width:600px;margin:0 auto">
+    <span class="sl-lbl">Contact direct</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,42px);font-weight:300;margin-bottom:18px">Vous préférez nous écrire<br><em style="font-style:italic;color:var(--terra)">directement ?</em></h2>
+    <p style="font-family:'EB Garamond',serif;font-size:17px;color:var(--taupe);margin-bottom:36px;line-height:1.85">Envoyez-nous un message ou une vidéo portée via WhatsApp pour une première estimation rapide.</p>
+    <a href="https://wa.me/33749507557" target="_blank" rel="noopener" style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:#25D366;padding:16px 44px;text-decoration:none;display:inline-block;transition:all .3s">Écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<div class="footer-bridge"></div>
+<!-- FOOTER -->
+<footer>
+  <div class="fb">
+    <img src="logo_umel_couture.webp" alt="Umel Couture" style="height:84px;width:auto;display:block;margin-bottom:14px;filter:brightness(0) invert(1);opacity:0.9">
+    <p><em>La robe qui vous ressemble. Vraiment.</em></p>
+  </div>
+  <div class="fl">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="notre-histoire.html">Notre Histoire</a></li>
+      <li><a href="nos-robes-services.html">Nos Robes &amp; Services</a></li>
+      <li><a href="sur-mesure.html">Sur mesure</a></li>
+      <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Conditions générales</a></li>
+    </ul>
+  </div>
+  <div class="fsoc">
+    <h4>Suivez-nous</h4>
+    <div class="si2">
+      <a href="#" class="sic">IG</a>
+      <a href="#" class="sic">FB</a>
+      <a href="#" class="sic">TK</a>
+    </div>
+    <p style="font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.38);margin-top:22px;line-height:1.85">Rejoignez notre communauté et inspirez-vous des plus belles créations.</p>
+  </div>
+</footer>
+<div class="fbot">
+  <p>© Umel Couture 2026 — Tous droits réservés</p>
+  <p>Servon · Seine-et-Marne</p>
+</div>
+
+<a href="https://wa.me/33749507557" class="wa-float" title="Nous contacter sur WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function submitForm(){
+  const form=document.getElementById('contactForm');
+  form.innerHTML='<p style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:var(--terra);line-height:1.7">Merci ! Nous vous recontacterons très bientôt.<br><span style="font-size:16px;color:var(--taupe);font-family:\'EB Garamond\',serif">Vous pouvez aussi nous joindre directement sur WhatsApp au <a href="https://wa.me/33749507557" style="color:var(--terra)">07 49 50 75 57</a>.</span></p>';
+}
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80));
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.s').forEach(s=>ro.observe(s));
+const hbg=document.getElementById('hbg');
+if(hbg){hbg.addEventListener('click',()=>{document.querySelector('.nav-links').classList.toggle('open');hbg.classList.toggle('open');});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.nav-links').classList.remove('open');hbg.classList.remove('open');}));}
+function navPillHover(el){var c=document.getElementById('navPillCursor');if(!c)return;c.style.width=el.offsetWidth+'px';c.style.left=el.offsetLeft+'px';c.style.opacity='1';}
+var navPill=document.getElementById('navPill');
+if(navPill)navPill.addEventListener('mouseleave',function(){var c=document.getElementById('navPillCursor');if(c)c.style.opacity='0';});
+</script>
+</body>
+</html>
