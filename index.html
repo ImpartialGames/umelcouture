@@ -23,11 +23,23 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;pad
 .nav-links a.active{color:var(--terra)}
 .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;cursor:pointer}
 .hbg span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s}
-.nav-cta{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:11px 26px;border:none;transition:all .3s;text-decoration:none;display:inline-block}
+.nav-cta{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:11px 26px;border:none;transition:all .3s;text-decoration:none;display:inline-block;border-radius:50px}
 .nav-cta:hover{background:var(--terra)}
-.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#F7F2EC 0%,#FAFAF8 55%,#EDD5C8 100%)}
-.hero::before{content:'';position:absolute;inset:0;background:url('Hero.webp') center/cover no-repeat;opacity:.5;z-index:1;pointer-events:none}
-.hero-content{position:relative;z-index:2;text-align:center;max-width:min(1100px,90vw);padding:0 40px;margin:0 auto}
+/* INTRO SPLASH — diaporama plein écran 16:9 */
+.intro-slider{position:relative;width:100%;height:100vh;overflow:hidden;background:var(--charcoal)}
+.intro-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s var(--ease-out-expo);will-change:opacity}
+.intro-slide.active{opacity:1}
+.intro-slider::before{content:'';position:absolute;top:0;left:0;right:0;height:240px;background:linear-gradient(to bottom,rgba(44,36,32,.5),transparent);z-index:2;pointer-events:none}
+.intro-slider::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,rgba(44,36,32,.32),transparent);z-index:2;pointer-events:none}
+.intro-logo{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:3;height:clamp(128px,19vh,212px);width:auto;filter:brightness(0) invert(1);opacity:0;animation:introIn 1.2s .35s var(--ease-out-expo) forwards}
+.intro-dots{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
+.intro-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);transition:all .45s var(--ease-out-expo);cursor:pointer;border:none;padding:0}
+.intro-dot.active{background:#fff;width:24px;border-radius:5px}
+@keyframes introIn{to{opacity:1}}
+/* barre de nav masquée pendant le splash, réapparaît au scroll */
+body.splash #nav{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(-16px)}
+@media(max-width:768px){.intro-logo{top:14px;height:clamp(92px,15vh,150px)}.intro-dots{bottom:28px}}
+.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#F7F2EC 0%,#FAFAF8 55%,#EDD5C8 100%)}.hero-content{position:relative;z-index:2;text-align:center;max-width:min(1100px,90vw);padding:0 40px;margin:0 auto}
 .hl{display:none}
 .ht{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.2vw,66px);font-weight:300;line-height:1.15;color:var(--charcoal);margin-bottom:28px}
 .ht .hline{display:block;clip-path:inset(0 100% 0 0);opacity:0;animation:lineIn 0.75s var(--ease-out-expo) forwards;animation-delay:calc(0.2s + var(--l,0) * 0.18s)}
@@ -166,6 +178,16 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   <a href="contact.html" class="nav-cta">Prendre rendez-vous</a>
   <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- INTRO SPLASH — diaporama plein écran 16:9 -->
+<section class="intro-slider" id="introSlider">
+  <div class="intro-slide active" style="background-image:url('Hero1.webp')"></div>
+  <div class="intro-slide" style="background-image:url('Hero2.webp')"></div>
+  <div class="intro-slide" style="background-image:url('Hero3.webp')"></div>
+  <div class="intro-slide" style="background-image:url('Hero4.webp')"></div>
+  <img src="logo_umel_couture.webp" alt="Umel Couture" class="intro-logo">
+  <div class="intro-dots" id="introDots"></div>
+</section>
 
 <!-- HERO -->
 <section class="hero">
@@ -357,6 +379,25 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
 <script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80));
+// INTRO SPLASH — diaporama plein écran + masquage nav
+(function(){
+  var slider=document.getElementById('introSlider');if(!slider)return;
+  var slides=[].slice.call(slider.querySelectorAll('.intro-slide'));
+  var dotsWrap=document.getElementById('introDots');
+  var i=0,timer;
+  slides.forEach(function(_,k){
+    var b=document.createElement('button');b.className='intro-dot'+(k===0?' active':'');b.setAttribute('aria-label','Photo '+(k+1));
+    b.addEventListener('click',function(){go(k);reset();});
+    dotsWrap.appendChild(b);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+  function go(n){slides[i].classList.remove('active');dots[i].classList.remove('active');i=(n+slides.length)%slides.length;slides[i].classList.add('active');dots[i].classList.add('active');}
+  function reset(){clearInterval(timer);timer=setInterval(function(){go(i+1);},4500);}
+  reset();
+  var body=document.body;
+  function onSplash(){if(window.scrollY<window.innerHeight*0.55)body.classList.add('splash');else body.classList.remove('splash');}
+  window.addEventListener('scroll',onSplash,{passive:true});onSplash();
+})();
 const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
 document.querySelectorAll('.s').forEach(s=>ro.observe(s));
 // Gradient réactif hero

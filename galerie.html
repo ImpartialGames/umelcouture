@@ -22,7 +22,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;pad
 .nav-links a.active{color:var(--terra)}
 .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;cursor:pointer}
 .hbg span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s}
-.nav-cta{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:11px 26px;border:none;transition:all .3s;text-decoration:none;display:inline-block;border-radius:4px}
+.nav-cta{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:11px 26px;border:none;transition:all .3s;text-decoration:none;display:inline-block;border-radius:50px}
 .nav-cta:hover{background:var(--terra)}
 .page-hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:160px 80px 90px;background:linear-gradient(135deg,#F7F2EC 0%,#FAFAF8 55%,#EDD5C8 100%);position:relative}
 .page-hero .hl{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.58em;text-transform:uppercase;color:var(--taupe);margin-bottom:24px;display:block;opacity:0;animation:fu .8s .2s forwards}
@@ -75,15 +75,16 @@ footer{background:var(--charcoal);padding:56px 80px;display:grid;grid-template-c
 .tilt-cap{font-family:'Jost',sans-serif;font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--taupe)}
 .tilt-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--nude);z-index:5}
 @media(max-width:768px){.tilt-scroll{height:300vh}.tilt-grid{gap:7px;padding:0 16px;max-width:520px}.tilt-col:nth-child(3){display:none}}
-/* AMBIANCE — galerie 3D infinie */
-.amb-3d{position:relative;height:340vh;background:var(--charcoal)}
-.amb-sticky{position:sticky;top:0;height:100vh;overflow:hidden}
-#ambCanvas{display:block;width:100%;height:100%}
-.amb-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:120px;text-align:center;pointer-events:none;z-index:2}
-.amb-overlay .sl-lbl{color:var(--nude)}
-.amb-overlay h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,56px);font-weight:300;color:var(--white)}
-.amb-overlay h2 em{font-style:italic;color:var(--blush)}
-.amb-hint{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,250,248,.5);margin-top:18px}
+/* GALERIE CIRCULAIRE — WebGL (OGL) pilotée au glissé */
+.circ-sec{padding:96px 0 76px;text-align:center;background:var(--white)}
+.circ-head{padding:0 80px;margin-bottom:34px;position:relative;z-index:5}
+.circ-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,52px);font-weight:300;line-height:1.05}
+.circ-head h2 em{font-style:italic;color:var(--terra)}
+.circ-wrap{position:relative;width:100%;height:600px;overflow:hidden;cursor:grab}
+.circ-wrap:active{cursor:grabbing}
+.circ-wrap canvas{display:block;width:100%;height:100%}
+.circ-hint{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--nude);margin-top:30px}
+@media(max-width:768px){.circ-wrap{height:440px}.circ-head{padding:0 24px;margin-bottom:24px}.circ-sec{padding:60px 0 50px}}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}section.s{opacity:1;transform:none;clip-path:none}}
 .nav-pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;padding:0;list-style:none;gap:0;background:transparent}
@@ -180,17 +181,14 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   </div>
 </section>
 
-
-<!-- AMBIANCE ATELIER — galerie 3D infinie en profondeur -->
-<section class="amb-3d" id="ambScroll">
-  <div class="amb-sticky">
-    <canvas id="ambCanvas"></canvas>
-    <div class="amb-overlay">
-      <span class="sl-lbl">Ambiance atelier</span>
-      <h2>Dans les <em>coulisses</em></h2>
-      <p class="amb-hint">Défilez — les images viennent à vous</p>
-    </div>
+<!-- AMBIANCE ATELIER — galerie circulaire WebGL -->
+<section class="s circ-sec" id="ambCirc">
+  <div class="circ-head">
+    <span class="sl-lbl">Ambiance atelier</span>
+    <h2>Dans les <em>coulisses</em></h2>
   </div>
+  <div class="circ-wrap" id="circAmb"></div>
+  <p class="circ-hint">Glissez — explorez l'atelier</p>
 </section>
 
 <!-- CTA BAND -->
@@ -275,58 +273,284 @@ if(navPill)navPill.addEventListener('mouseleave',function(){var c=document.getEl
 })();
 </script>
 
-<!-- AMBIANCE — galerie 3D infinie (Three.js) -->
-<script type="importmap">
-{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}
-</script>
+<!-- GALERIE CIRCULAIRE — OGL (WebGL), portée en vanilla JS -->
 <script type="module">
-import * as THREE from 'three';
-const sectionEl=document.getElementById('ambScroll');
-const canvas=document.getElementById('ambCanvas');
-if(sectionEl&&canvas&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-  const imgs=['Ambiance atelier1.webp','Ambiance atelier2.webp','Ambiance atelier3.webp','Ambiance atelier4.webp','Ambiance atelier5.webp'];
-  const DEPTH=50,N=12,half=DEPTH/2;
-  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  const scene=new THREE.Scene();
-  const camera=new THREE.PerspectiveCamera(55,1,0.1,120);
-  camera.position.set(0,0,0);
-  const loader=new THREE.TextureLoader();
-  const textures=imgs.map(function(s){var t=loader.load(encodeURI(s));t.colorSpace=THREE.SRGBColorSpace;return t;});
-  const planes=[];
-  for(var i=0;i<N;i++){
-    var mat=new THREE.MeshBasicMaterial({transparent:true,map:textures[i%textures.length],depthWrite:false});
-    var mesh=new THREE.Mesh(new THREE.PlaneGeometry(1,1),mat);
-    var ha=(i*2.618)%(Math.PI*2),va=(i*1.618+Math.PI/3)%(Math.PI*2);
-    var hr=(i%3)*1.2,vr=((i+1)%4)*0.8;
-    mesh.userData={base:(DEPTH/N)*i,x:Math.sin(ha)*hr*8/3,y:Math.cos(va)*vr*8/4};
-    scene.add(mesh);planes.push(mesh);
-  }
-  function resize(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
-  function scaleOf(m){var t=m.material.map;if(t&&t.image){var a=t.image.width/t.image.height;if(a>1)m.scale.set(2.4*a,2.4,1);else m.scale.set(2.4,2.4/a,1);}}
-  function update(){
-    var rect=sectionEl.getBoundingClientRect();
-    var total=sectionEl.offsetHeight-window.innerHeight;
-    var p=total>0?Math.max(0,Math.min(1,(-rect.top)/total)):0;
-    var travel=p*DEPTH*3;
-    for(var i=0;i<planes.length;i++){
-      var m=planes[i];
-      var z=(m.userData.base+travel)%DEPTH;if(z<0)z+=DEPTH;
-      m.position.set(m.userData.x,m.userData.y,z-half);
-      scaleOf(m);
-      var np=z/DEPTH,op=1;
-      if(np<0.10)op=np/0.10;else if(np>0.40)op=Math.max(0,1-(np-0.40)/0.08);
-      m.material.opacity=Math.max(0,Math.min(1,op));
-      m.visible=op>0.001;
-    }
-    renderer.render(scene,camera);
-  }
-  resize();
-  var raf=false;
-  window.addEventListener('scroll',function(){if(!raf){requestAnimationFrame(function(){update();raf=false;});raf=true;}},{passive:true});
-  window.addEventListener('resize',function(){resize();update();});
-  var warm=0;(function warmup(){update();if(++warm<150)requestAnimationFrame(warmup);})();
+import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'https://esm.sh/ogl@1.0.11';
+
+function debounce(func, wait){
+  let timeout;
+  return function(...args){clearTimeout(timeout);timeout=setTimeout(()=>func.apply(this,args),wait);};
 }
+function lerp(p1,p2,t){return p1+(p2-p1)*t;}
+function autoBind(instance){
+  const proto=Object.getPrototypeOf(instance);
+  Object.getOwnPropertyNames(proto).forEach((key)=>{
+    if(key!=='constructor'&&typeof instance[key]==='function'){instance[key]=instance[key].bind(instance);}
+  });
+}
+function createTextTexture(gl,text,font,color){
+  const canvas=document.createElement('canvas');
+  const context=canvas.getContext('2d');
+  context.font=font;
+  const metrics=context.measureText(text);
+  const textWidth=Math.ceil(metrics.width);
+  const textHeight=Math.ceil(parseInt(font,10)*1.2);
+  canvas.width=textWidth+20;
+  canvas.height=textHeight+20;
+  context.font=font;
+  context.fillStyle=color;
+  context.textBaseline='middle';
+  context.textAlign='center';
+  context.clearRect(0,0,canvas.width,canvas.height);
+  context.fillText(text,canvas.width/2,canvas.height/2);
+  const texture=new Texture(gl,{generateMipmaps:false});
+  texture.image=canvas;
+  return {texture,width:canvas.width,height:canvas.height};
+}
+
+class Title{
+  constructor({gl,plane,renderer,text,textColor,font}){
+    autoBind(this);
+    this.gl=gl;this.plane=plane;this.renderer=renderer;this.text=text;this.textColor=textColor;this.font=font;
+    this.createMesh();
+  }
+  createMesh(){
+    if(!this.text)return;
+    const {texture,width,height}=createTextTexture(this.gl,this.text,this.font,this.textColor);
+    const geometry=new Plane(this.gl);
+    const program=new Program(this.gl,{
+      vertex:`
+        attribute vec3 position;attribute vec2 uv;
+        uniform mat4 modelViewMatrix;uniform mat4 projectionMatrix;
+        varying vec2 vUv;
+        void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}
+      `,
+      fragment:`
+        precision highp float;uniform sampler2D tMap;varying vec2 vUv;
+        void main(){vec4 color=texture2D(tMap,vUv);if(color.a<0.1)discard;gl_FragColor=color;}
+      `,
+      uniforms:{tMap:{value:texture}},
+      transparent:true,
+    });
+    this.mesh=new Mesh(this.gl,{geometry,program});
+    const aspect=width/height;
+    const textHeight=this.plane.scale.y*0.15;
+    const textWidth=textHeight*aspect;
+    this.mesh.scale.set(textWidth,textHeight,1);
+    this.mesh.position.y=-this.plane.scale.y*0.5-textHeight*0.5-0.05;
+    this.mesh.setParent(this.plane);
+  }
+}
+
+class Media{
+  constructor({geometry,gl,image,index,length,renderer,scene,screen,text,viewport,bend,textColor,borderRadius=0,font}){
+    this.extra=0;this.widthTotal=0;this.width=0;this.x=0;this.scale=1;this.padding=2;this.speed=0;this.isBefore=false;this.isAfter=false;this.imageAspect=null;
+    this.geometry=geometry;this.gl=gl;this.image=image;this.index=index;this.length=length;this.renderer=renderer;this.scene=scene;
+    this.screen=screen;this.text=text;this.viewport=viewport;this.bend=bend;this.textColor=textColor;this.borderRadius=borderRadius;this.font=font;
+    this.createShader();this.createMesh();this.createTitle();this.onResize();
+  }
+  createShader(){
+    const texture=new Texture(this.gl,{generateMipmaps:true});
+    this.program=new Program(this.gl,{
+      depthTest:false,depthWrite:false,
+      vertex:`
+        precision highp float;
+        attribute vec3 position;attribute vec2 uv;
+        uniform mat4 modelViewMatrix;uniform mat4 projectionMatrix;
+        uniform float uTime;uniform float uSpeed;
+        varying vec2 vUv;
+        void main(){
+          vUv=uv;vec3 p=position;
+          p.z=(sin(p.x*4.0+uTime)*1.5+cos(p.y*2.0+uTime)*1.5)*(0.1+uSpeed*0.5);
+          gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);
+        }
+      `,
+      fragment:`
+        precision highp float;
+        uniform vec2 uImageSizes;uniform vec2 uPlaneSizes;uniform sampler2D tMap;uniform float uBorderRadius;
+        varying vec2 vUv;
+        float roundedBoxSDF(vec2 p,vec2 b,float r){vec2 d=abs(p)-b;return length(max(d,vec2(0.0)))+min(max(d.x,d.y),0.0)-r;}
+        void main(){
+          vec2 ratio=vec2(
+            min((uPlaneSizes.x/uPlaneSizes.y)/(uImageSizes.x/uImageSizes.y),1.0),
+            min((uPlaneSizes.y/uPlaneSizes.x)/(uImageSizes.y/uImageSizes.x),1.0)
+          );
+          vec2 uv=vec2(vUv.x*ratio.x+(1.0-ratio.x)*0.5,vUv.y*ratio.y+(1.0-ratio.y)*0.5);
+          vec4 color=texture2D(tMap,uv);
+          float d=roundedBoxSDF(vUv-0.5,vec2(0.5-uBorderRadius),uBorderRadius);
+          float edgeSmooth=0.002;
+          float alpha=1.0-smoothstep(-edgeSmooth,edgeSmooth,d);
+          gl_FragColor=vec4(color.rgb,alpha);
+        }
+      `,
+      uniforms:{
+        tMap:{value:texture},
+        uPlaneSizes:{value:[0,0]},
+        uImageSizes:{value:[0,0]},
+        uSpeed:{value:0},
+        uTime:{value:100*Math.random()},
+        uBorderRadius:{value:this.borderRadius},
+      },
+      transparent:true,
+    });
+    const img=new Image();
+    img.crossOrigin='anonymous';
+    img.src=this.image;
+    img.onload=()=>{
+      texture.image=img;
+      this.program.uniforms.uImageSizes.value=[img.naturalWidth,img.naturalHeight];
+      this.imageAspect=img.naturalWidth/img.naturalHeight;   // ratio réel (L/H)
+      this.onResize();                                        // adapte le cadre au format
+      if(this.relayout)this.relayout();                       // recalage de la rangée
+    };
+  }
+  createMesh(){this.plane=new Mesh(this.gl,{geometry:this.geometry,program:this.program});this.plane.setParent(this.scene);}
+  createTitle(){this.title=new Title({gl:this.gl,plane:this.plane,renderer:this.renderer,text:this.text,textColor:this.textColor,font:this.font});}
+  update(scroll,direction){
+    this.plane.position.x=this.x-scroll.current-this.extra;
+    const x=this.plane.position.x;
+    const H=this.viewport.width/2;
+    if(this.bend===0){this.plane.position.y=0;this.plane.rotation.z=0;}
+    else{
+      const B_abs=Math.abs(this.bend);
+      const R=(H*H+B_abs*B_abs)/(2*B_abs);
+      const effectiveX=Math.min(Math.abs(x),H);
+      const arc=R-Math.sqrt(R*R-effectiveX*effectiveX);
+      if(this.bend>0){this.plane.position.y=-arc;this.plane.rotation.z=-Math.sign(x)*Math.asin(effectiveX/R);}
+      else{this.plane.position.y=arc;this.plane.rotation.z=Math.sign(x)*Math.asin(effectiveX/R);}
+    }
+    this.speed=scroll.current-scroll.last;
+    this.program.uniforms.uTime.value+=0.04;
+    this.program.uniforms.uSpeed.value=this.speed;
+    const planeOffset=this.plane.scale.x/2;
+    const viewportOffset=this.viewport.width/2;
+    this.isBefore=this.plane.position.x+planeOffset<-viewportOffset;
+    this.isAfter=this.plane.position.x-planeOffset>viewportOffset;
+    if(direction==='right'&&this.isBefore){this.extra-=this.widthTotal;this.isBefore=this.isAfter=false;}
+    if(direction==='left'&&this.isAfter){this.extra+=this.widthTotal;this.isBefore=this.isAfter=false;}
+  }
+  onResize({screen,viewport}={}){
+    if(screen)this.screen=screen;
+    if(viewport){this.viewport=viewport;}
+    this.scale=this.screen.height/1500;
+    const aspect=this.imageAspect||0.75;          // ratio L/H — portrait par défaut avant chargement
+    const heightPx=820*this.scale;                // hauteur de cadre commune
+    const widthPx=heightPx*aspect;                // largeur dérivée du format réel
+    this.plane.scale.y=(this.viewport.height*heightPx)/this.screen.height;
+    this.plane.scale.x=(this.viewport.width*widthPx)/this.screen.width;
+    this.program.uniforms.uPlaneSizes.value=[this.plane.scale.x,this.plane.scale.y];
+  }
+}
+
+class App{
+  constructor(container,{items,bend,textColor,borderRadius,font,scrollSpeed,scrollEase}){
+    this.container=container;
+    this.scrollSpeed=scrollSpeed;
+    this.scroll={ease:scrollEase,current:0,target:0,last:0};
+    this.isDown=false;this.start=0;
+    this.onCheckDebounce=debounce(this.onCheck.bind(this),200);
+    autoBind(this);
+    this.createRenderer();this.createCamera();this.createScene();this.onResize();
+    this.createGeometry();this.createMedias(items,bend,textColor,borderRadius,font);
+    this.update();this.addEventListeners();
+  }
+  createRenderer(){
+    this.renderer=new Renderer({alpha:true,antialias:true,dpr:Math.min(window.devicePixelRatio||1,2)});
+    this.gl=this.renderer.gl;this.gl.clearColor(0,0,0,0);
+    this.container.appendChild(this.gl.canvas);
+  }
+  createCamera(){this.camera=new Camera(this.gl);this.camera.fov=45;this.camera.position.z=20;}
+  createScene(){this.scene=new Transform();}
+  createGeometry(){this.planeGeometry=new Plane(this.gl,{heightSegments:50,widthSegments:100});}
+  createMedias(items,bend,textColor,borderRadius,font){
+    const galleryItems=items&&items.length>0?items:[];
+    this.mediasImages=[...galleryItems,...galleryItems];
+    this.medias=this.mediasImages.map((data,index)=>new Media({
+      geometry:this.planeGeometry,gl:this.gl,image:data.image,index,length:this.mediasImages.length,
+      renderer:this.renderer,scene:this.scene,screen:this.screen,text:data.text,viewport:this.viewport,
+      bend,textColor,borderRadius,font,
+    }));
+    this.medias.forEach((m)=>{m.relayout=()=>this.layout();});
+    this.layout();
+  }
+  layout(){
+    if(!this.medias||!this.medias.length)return;
+    const padding=1.4;                 // écart (unités monde) entre les cartes
+    let cursor=0;
+    this.medias.forEach((m)=>{
+      const w=m.plane.scale.x+padding;
+      m.width=w;
+      m.x=cursor+w/2;                  // position du centre, espacement variable
+      cursor+=w;
+    });
+    this.medias.forEach((m)=>{m.widthTotal=cursor;});   // période commune pour la boucle infinie
+  }
+  onTouchDown(e){this.isDown=true;this.scroll.position=this.scroll.current;this.start='touches'in e?e.touches[0].clientX:e.clientX;}
+  onTouchMove(e){if(!this.isDown)return;const x='touches'in e?e.touches[0].clientX:e.clientX;const distance=(this.start-x)*(this.scrollSpeed*0.025);this.scroll.target=this.scroll.position+distance;}
+  onTouchUp(){this.isDown=false;this.onCheck();}
+  onWheel(e){const delta=e.deltaY||e.wheelDelta||e.detail;this.scroll.target+=(delta>0?this.scrollSpeed:-this.scrollSpeed)*0.2;this.onCheckDebounce();}
+  onCheck(){
+    if(!this.medias||!this.medias.length)return;
+    const wt=this.medias[0].widthTotal;if(!wt)return;
+    const S=this.scroll.target;
+    let r=S%wt;if(r<0)r+=wt;
+    let bestX=this.medias[0].x,bestD=Infinity;
+    this.medias.forEach((m)=>{
+      [m.x-wt,m.x,m.x+wt].forEach((cx)=>{const d=Math.abs(cx-r);if(d<bestD){bestD=d;bestX=cx;}});
+    });
+    this.scroll.target=S+(bestX-r);   // cale la carte la plus proche au centre
+  }
+  onResize(){
+    this.screen={width:this.container.clientWidth,height:this.container.clientHeight};
+    this.renderer.setSize(this.screen.width,this.screen.height);
+    this.camera.perspective({aspect:this.screen.width/this.screen.height});
+    const fov=(this.camera.fov*Math.PI)/180;
+    const height=2*Math.tan(fov/2)*this.camera.position.z;
+    const width=height*this.camera.aspect;
+    this.viewport={width,height};
+    if(this.medias){this.medias.forEach((media)=>media.onResize({screen:this.screen,viewport:this.viewport}));this.layout();}
+  }
+  update(){
+    this.scroll.current=lerp(this.scroll.current,this.scroll.target,this.scroll.ease);
+    const direction=this.scroll.current>this.scroll.last?'right':'left';
+    if(this.medias){this.medias.forEach((media)=>media.update(this.scroll,direction));}
+    this.renderer.render({scene:this.scene,camera:this.camera});
+    this.scroll.last=this.scroll.current;
+    this.raf=window.requestAnimationFrame(this.update);
+  }
+  addEventListeners(){
+    this.boundOnResize=this.onResize;this.boundOnWheel=this.onWheel;
+    this.boundOnTouchDown=this.onTouchDown;this.boundOnTouchMove=this.onTouchMove;this.boundOnTouchUp=this.onTouchUp;
+    window.addEventListener('resize',this.boundOnResize);
+    this.container.addEventListener('mousewheel',this.boundOnWheel,{passive:true});
+    this.container.addEventListener('wheel',this.boundOnWheel,{passive:true});
+    this.container.addEventListener('mousedown',this.boundOnTouchDown);
+    window.addEventListener('mousemove',this.boundOnTouchMove);
+    window.addEventListener('mouseup',this.boundOnTouchUp);
+    this.container.addEventListener('touchstart',this.boundOnTouchDown,{passive:true});
+    window.addEventListener('touchmove',this.boundOnTouchMove,{passive:true});
+    window.addEventListener('touchend',this.boundOnTouchUp);
+  }
+}
+
+function initCircularGallery(container,items,opts){
+  opts=opts||{};
+  return new App(container,{
+    items,
+    bend:opts.bend!==undefined?opts.bend:3,
+    textColor:opts.textColor||'#2C2420',
+    borderRadius:opts.borderRadius!==undefined?opts.borderRadius:0.05,
+    font:opts.font||"400 30px 'Cormorant Garamond', serif",
+    scrollSpeed:opts.scrollSpeed!==undefined?opts.scrollSpeed:2,
+    scrollEase:opts.scrollEase!==undefined?opts.scrollEase:0.05,
+  });
+}
+
+const ambItems=[];
+for(let i=1;i<=5;i++)ambItems.push({image:encodeURI('Ambiance atelier'+i+'.webp'),text:''});
+
+const ambEl=document.getElementById('circAmb');
+if(ambEl)initCircularGallery(ambEl,ambItems,{bend:3,borderRadius:0.05,scrollEase:0.02});
 </script>
 </body>
 </html>
