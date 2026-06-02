@@ -38,7 +38,13 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;pad
 @keyframes introIn{to{opacity:1}}
 /* barre de nav masquée pendant le splash, réapparaît au scroll */
 body.splash #nav{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(-16px)}
-@media(max-width:768px){.intro-logo{top:14px;height:clamp(92px,15vh,150px)}.intro-dots{bottom:28px}}
+@media(max-width:768px){.intro-logo{top:14px;height:clamp(92px,15vh,150px)}.intro-dots{bottom:28px}
+  /* cadrage des mannequins sur mobile (photos paysage en cover) */
+  .intro-slide:nth-of-type(1){background-position:40% center}
+  .intro-slide:nth-of-type(2){background-position:63% center}
+  .intro-slide:nth-of-type(3){background-position:34% center}
+  .intro-slide:nth-of-type(4){background-position:46% center}
+}
 .hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#F7F2EC 0%,#FAFAF8 55%,#EDD5C8 100%)}.hero-content{position:relative;z-index:2;text-align:center;max-width:min(1100px,90vw);padding:0 40px;margin:0 auto}
 .hl{display:none}
 .ht{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.2vw,66px);font-weight:300;line-height:1.15;color:var(--charcoal);margin-bottom:28px}
