@@ -212,6 +212,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   .umel-vals>div{border-right:none!important;padding:28px 0!important;border-bottom:1px solid rgba(196,169,107,.1)}
   .fond-grid{grid-template-columns:1fr!important}
   .fond-grid>div{border-right:none!important;padding:40px 0!important}
+  .hist-body-grid{grid-template-columns:1fr!important}
+  .hist-cite{display:none}
   .svc-grid{grid-template-columns:1fr!important}
   .avis-grid{grid-template-columns:1fr!important}
   .svc-new-wrap{padding:0 16px;gap:12px}
@@ -238,6 +240,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   .fond-grid{grid-template-columns:1fr 1fr}
   .fond-grid>div:first-child{padding:48px 40px 48px 0!important}
   .fond-grid>div:last-child{padding:48px 0 48px 40px!important}
+  .hist-body-grid{grid-template-columns:1fr 240px!important;gap:48px!important}
   .fbot{padding:18px 40px}
   .cband{padding:80px 40px}
 }
@@ -365,19 +368,96 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
 </section>
 
 <!-- NOTRE HISTOIRE -->
-<section class="s" style="background:var(--white);padding:110px 80px">
-  <div style="max-width:840px;margin:0 auto">
-    <span class="sl-lbl">Notre Histoire</span>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5.8vw,84px);font-weight:300;line-height:1.06;color:var(--charcoal);margin-bottom:8px">Née de deux femmes.</h2>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.6vw,66px);font-weight:300;font-style:italic;line-height:1.1;color:var(--terra);margin-bottom:56px">Umi <span style="font-style:normal;font-size:.55em;vertical-align:middle;opacity:.7">—◦—</span> Melissa</h2>
-    <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.95;color:var(--taupe);margin-bottom:22px">Umel n'est pas née dans une salle de réunion. Elle n'a pas été pensée autour d'un positionnement marketing. Elle est née de deux visions, deux sensibilités, un seul nom.</p>
-    <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.95;color:var(--taupe);margin-bottom:22px">Avant la première robe. Avant la première cliente. La marque portait déjà quelque chose de rare — une histoire vraie. Et ça change tout.</p>
-    <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.95;color:var(--taupe);margin-bottom:48px">Parce qu'Umel ne cherche pas à vendre du mariage. Umel cherche à créer une robe qui ressemble réellement à la femme qui la porte.</p>
-    <div style="display:flex;gap:48px;margin-bottom:44px;padding-top:32px;border-top:1px solid var(--blush)">
-      <div><strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal)">4,8</strong><span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Note Google · <span id="c1">331</span> avis</span></div>
-      <div><strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal)">100%</strong><span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Sur mesure</span></div>
+<section class="s" style="background:var(--white);padding:110px 80px;position:relative;overflow:hidden">
+
+  <!-- Coins broderie -->
+  <svg class="corner-stitch tr" viewBox="0 0 64 64" fill="none"><path d="M4 60 L4 4 L60 4" stroke="#C4A96B" stroke-width="1" stroke-dasharray="2 3" fill="none"/><line x1="10" y1="10" x2="14" y2="14" stroke="#A0785A" stroke-width=".8"/><line x1="14" y1="10" x2="10" y2="14" stroke="#A0785A" stroke-width=".8"/><circle cx="8" cy="8" r="1.5" fill="#C4A96B" opacity=".7"/><circle cx="32" cy="6" r="1" fill="#C4A96B" opacity=".5"/></svg>
+  <svg class="corner-stitch bl" viewBox="0 0 64 64" fill="none"><path d="M4 60 L4 4 L60 4" stroke="#C4A96B" stroke-width="1" stroke-dasharray="2 3" fill="none"/><line x1="10" y1="10" x2="14" y2="14" stroke="#A0785A" stroke-width=".8"/><line x1="14" y1="10" x2="10" y2="14" stroke="#A0785A" stroke-width=".8"/><circle cx="8" cy="8" r="1.5" fill="#C4A96B" opacity=".7"/><circle cx="32" cy="6" r="1" fill="#C4A96B" opacity=".5"/></svg>
+
+  <div style="max-width:1100px;margin:0 auto">
+
+    <!-- Label + aiguille et fil décoratifs -->
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:28px">
+      <span class="sl-lbl" style="margin-bottom:0">Notre Histoire</span>
+      <svg width="56" height="18" viewBox="0 0 56 18" fill="none" style="opacity:.4;flex-shrink:0">
+        <path d="M2 9 Q10 3 18 9 Q26 15 34 9" stroke="#C4A96B" stroke-width="1.1" stroke-dasharray="2.5 2" fill="none"/>
+        <line x1="34" y1="9" x2="47" y2="4" stroke="#8A7F78" stroke-width="1.3"/>
+        <ellipse cx="50" cy="3" rx="3" ry="1.8" transform="rotate(-20 50 3)" stroke="#8A7F78" stroke-width="1" fill="none"/>
+        <circle cx="50.5" cy="3" r=".9" fill="#8A7F78"/>
+      </svg>
     </div>
-    <a href="notre-histoire.html" class="bs">Découvrir notre histoire</a>
+
+    <!-- Grand titre -->
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5.8vw,84px);font-weight:300;line-height:1.06;color:var(--charcoal);margin-bottom:6px">Née de deux femmes.</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.6vw,66px);font-weight:300;font-style:italic;line-height:1.1;color:var(--terra);margin-bottom:44px">Umi <span style="font-style:normal;font-size:.55em;vertical-align:middle;opacity:.6">—◦—</span> Melissa</h2>
+
+    <!-- Diviseur avec bague centrale -->
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:56px">
+      <div style="flex:1;border-top:1px dashed rgba(196,169,107,.38)"></div>
+      <svg width="22" height="24" viewBox="0 0 22 24" fill="none" style="color:var(--or);flex-shrink:0;opacity:.75">
+        <path d="M7.5 8 L11 3.5 L14.5 8" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round"/>
+        <circle cx="11" cy="16" r="7" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="11" cy="3.5" r="2.2" stroke="currentColor" stroke-width="1" fill="none"/>
+        <line x1="9.5" y1="2.5" x2="12.5" y2="4.5" stroke="currentColor" stroke-width=".7" opacity=".6"/>
+      </svg>
+      <div style="flex:1;border-top:1px dashed rgba(196,169,107,.38)"></div>
+    </div>
+
+    <!-- Corps : texte + citation latérale -->
+    <div class="hist-body-grid" style="display:grid;grid-template-columns:1fr 280px;gap:80px;align-items:start;margin-bottom:56px">
+
+      <!-- Paragraphes principaux -->
+      <div>
+        <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.95;color:var(--taupe);margin-bottom:24px">Umel n'est pas née dans une salle de réunion. Elle n'a pas été pensée autour d'un positionnement marketing. Elle est née de deux visions, deux sensibilités, un seul nom.</p>
+        <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.95;color:var(--taupe);margin-bottom:24px">Avant la première robe. Avant la première cliente. La marque portait déjà quelque chose de rare — une histoire vraie. Et ça change tout.</p>
+        <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.95;color:var(--taupe)">Parce qu'Umel ne cherche pas à vendre du mariage. Umel cherche à créer une robe qui ressemble réellement à la femme qui la porte.</p>
+      </div>
+
+      <!-- Citation latérale avec barre or -->
+      <div class="hist-cite" style="border-left:1.5px solid rgba(196,169,107,.55);padding-left:26px">
+        <!-- Icône bobine / couture -->
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" style="color:rgba(196,169,107,.5);margin-bottom:18px;display:block">
+          <circle cx="13" cy="13" r="4.5" stroke="currentColor" stroke-width="1.1"/>
+          <circle cx="13" cy="13" r="9" stroke="currentColor" stroke-width=".7" stroke-dasharray="1.8 2.5"/>
+          <line x1="13" y1="3.5" x2="13" y2="1" stroke="currentColor" stroke-width="1"/>
+          <line x1="20" y1="6.5" x2="22" y2="4.5" stroke="currentColor" stroke-width="1"/>
+          <line x1="22.5" y1="13" x2="25" y2="13" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--terra);line-height:1.7;margin-bottom:28px">"La marque portait déjà quelque chose de rare — une histoire vraie."</p>
+        <!-- Points broderie décoratifs -->
+        <div style="display:flex;gap:5px;align-items:center">
+          <span style="width:3px;height:3px;border-radius:50%;background:rgba(196,169,107,.4);display:inline-block"></span>
+          <span style="width:5px;height:5px;border-radius:50%;background:rgba(196,169,107,.55);display:inline-block"></span>
+          <span style="width:3px;height:3px;border-radius:50%;background:rgba(196,169,107,.4);display:inline-block"></span>
+        </div>
+        <!-- Petites croix de broderie -->
+        <div style="margin-top:24px;display:flex;gap:10px;opacity:.28">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="0" y1="0" x2="10" y2="10" stroke="#C4A96B" stroke-width="1"/><line x1="10" y1="0" x2="0" y2="10" stroke="#C4A96B" stroke-width="1"/></svg>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="0" y1="0" x2="10" y2="10" stroke="#C4A96B" stroke-width="1"/><line x1="10" y1="0" x2="0" y2="10" stroke="#C4A96B" stroke-width="1"/></svg>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="0" y1="0" x2="10" y2="10" stroke="#C4A96B" stroke-width="1"/><line x1="10" y1="0" x2="0" y2="10" stroke="#C4A96B" stroke-width="1"/></svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats + bouton sur la même ligne -->
+    <div style="display:flex;align-items:center;padding-top:32px;border-top:1px solid var(--blush)">
+      <div style="margin-right:36px">
+        <strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal);line-height:1">4,8</strong>
+        <span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Note Google · <span id="c1">331</span> avis</span>
+      </div>
+      <!-- Anneau séparateur -->
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="color:var(--blush);margin-right:36px;flex-shrink:0;opacity:.8">
+        <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.1"/>
+        <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width=".8"/>
+      </svg>
+      <div style="margin-right:auto">
+        <strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal);line-height:1">100%</strong>
+        <span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Sur mesure</span>
+      </div>
+      <a href="notre-histoire.html" class="bs" style="white-space:nowrap">Découvrir notre histoire</a>
+    </div>
+
   </div>
 </section>
 
