@@ -112,13 +112,17 @@ footer{background:var(--cream);padding:56px 80px;display:grid;grid-template-colu
 @media(max-width:768px){
   /* Galerie créations — grille plate 2 colonnes (effet 3D désactivé sur mobile) */
   .tilt-scroll{height:auto!important;background:var(--white)}
-  .tilt-sticky{position:static!important;height:auto!important;display:block;overflow:visible;perspective:none;padding:0 0 6px}
+  .tilt-sticky{position:relative!important;height:auto!important;display:block;overflow:visible;perspective:none;padding:0 0 6px}
   .tilt-head{margin-bottom:34px}
   .tilt-grid{transform:none!important;display:grid!important;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px;max-width:none;perspective:none}
   .tilt-col{display:contents}
   .tilt-col:nth-child(2),.tilt-col:nth-child(3){margin-top:0;display:contents}
   .tilt-card{transform:none!important;margin:0}
   .tilt-hint{display:none}
+  /* Faisceau blanc des deux côtés (comme Ambiance atelier) */
+  .tilt-sticky::before,.tilt-sticky::after{content:'';position:absolute;top:0;bottom:0;width:46px;z-index:5;pointer-events:none}
+  .tilt-sticky::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+  .tilt-sticky::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
 }
 /* GALERIE AMBIANCE ATELIER — CSS scroll horizontal */
 .circ-sec{padding:96px 0 76px;text-align:center;background:var(--white)}
