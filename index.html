@@ -30,9 +30,9 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;pad
 .intro-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s var(--ease-out-expo);will-change:opacity;z-index:0}
 .intro-slide.active{opacity:1}
 /* Grille tissée par-dessus les photos */
-.hero-grid-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background-image:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(196,169,107,.07) 2px,rgba(196,169,107,.07) 4px),repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(196,169,107,.07) 2px,rgba(196,169,107,.07) 4px)}
+.hero-grid-overlay{display:none}
 /* Gradient sombre latéral + bas */
-.hero-gradient{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to right,rgba(44,36,32,.88) 0%,rgba(44,36,32,.52) 50%,transparent 100%),linear-gradient(to top,rgba(44,36,32,.6) 0%,transparent 45%)}
+.hero-gradient{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.48) 0%,rgba(0,0,0,.08) 38%,transparent 62%)}
 /* Contenu hero */
 .intro-hero-content{position:relative;z-index:4;max-width:620px}
 .hero-eyebrow{font-family:'Jost',sans-serif;font-size:10px;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--or);margin-bottom:26px;opacity:0;transform:translateY(12px);animation:fadeUp .8s ease .3s forwards;display:block}
@@ -71,9 +71,9 @@ body.splash #nav{opacity:0;pointer-events:none;transform:translateX(-50%) transl
   .intro-slide:nth-of-type(3){background-position:34% center}
   .intro-slide:nth-of-type(4){background-position:46% center}
 }
-.bp{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--white);padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:6px;text-decoration:none;display:inline-block;position:relative;overflow:hidden;isolation:isolate;background:var(--charcoal);background-image:linear-gradient(var(--terra) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;transition:background-position 480ms var(--ease-out-expo),border-color 300ms,color 200ms}
+.bp{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--white);padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:50px;text-decoration:none;display:inline-block;position:relative;overflow:hidden;isolation:isolate;background:var(--charcoal);background-image:linear-gradient(var(--terra) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;transition:background-position 480ms var(--ease-out-expo),border-color 300ms,color 200ms}
 .bp:hover{background-position:0 0;border-color:var(--terra)}
-.bs{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);background:transparent;padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:6px;text-decoration:none;transition:border-color 300ms var(--ease-out-quart),color 300ms var(--ease-out-quart);display:inline-block}
+.bs{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);background:transparent;padding:15px 38px;border:1.5px solid var(--charcoal);border-radius:50px;text-decoration:none;transition:border-color 300ms var(--ease-out-quart),color 300ms var(--ease-out-quart);display:inline-block}
 .bs:hover{border-color:var(--terra);color:var(--terra)}
 @keyframes fu{to{opacity:1;transform:translateY(0)}}
 section.s{padding:110px 80px;opacity:0;transition:opacity 1s var(--ease-out-expo)}
@@ -87,7 +87,7 @@ section.s.reveal-scale.vis .sc{opacity:1;transform:none}
 .cband h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,68px);font-weight:300;color:var(--white);margin-bottom:14px;line-height:1.1}
 .cband h2 em{font-style:italic;color:var(--nude)}
 .cband p{font-family:'EB Garamond',serif;font-size:17px;color:rgba(250,250,248,.55);margin-bottom:44px}
-.bl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);padding:16px 44px;border-radius:6px;text-decoration:none;display:inline-block;background:var(--white);background-image:linear-gradient(var(--nude) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;transition:background-position 480ms var(--ease-out-expo)}
+.bl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--charcoal);padding:16px 44px;border-radius:50px;text-decoration:none;display:inline-block;background:var(--white);background-image:linear-gradient(var(--nude) 50%,transparent 50%);background-size:100% 200%;background-position:0 100%;transition:background-position 480ms var(--ease-out-expo)}
 .bl:hover{background-position:0 0}
 .sc{background:var(--white);padding:56px 46px 52px;position:relative;overflow:hidden;border:none;transition:transform 380ms var(--ease-out-expo),box-shadow 380ms var(--ease-out-expo)}
 .sc::before{content:'';position:absolute;top:0;left:46px;width:38px;height:2px;background:var(--terra);transition:width 400ms var(--ease-out-expo)}
@@ -97,21 +97,21 @@ section.s.reveal-scale.vis .sc{opacity:1;transform:none}
 .sc:hover .sn{color:var(--blush)}
 .sc h3{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;margin-bottom:16px;color:var(--charcoal);margin-top:26px;position:relative;z-index:1}
 .sc p{font-family:'EB Garamond',serif;font-size:15px;line-height:1.85;color:var(--taupe);position:relative;z-index:1}
-footer{background:var(--charcoal);padding:56px 80px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px}
-.fb .ft{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.46em;color:var(--white);text-transform:uppercase;margin-bottom:14px;display:block}
-.fb p{font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.55);line-height:1.85}
-.fl h4,.fsoc h4{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;color:var(--nude);margin-bottom:22px}
+footer{background:var(--cream);padding:56px 80px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px}
+.fb .ft{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.46em;color:var(--charcoal);text-transform:uppercase;margin-bottom:14px;display:block}
+.fb p{font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(44,36,32,.65);line-height:1.85}
+.fl h4,.fsoc h4{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;color:var(--terra);margin-bottom:22px}
 .fl ul{list-style:none;display:flex;flex-direction:column;gap:11px}
-.fl a{font-family:'EB Garamond',serif;font-size:14.5px;color:rgba(250,250,248,.55);text-decoration:none;transition:color .3s}
-.fl a:hover{color:var(--nude)}
+.fl a{font-family:'EB Garamond',serif;font-size:14.5px;color:rgba(44,36,32,.65);text-decoration:none;transition:color .3s}
+.fl a:hover{color:var(--terra)}
 .si2{display:flex;gap:14px}
-.sic{width:42px;height:42px;border:1px solid rgba(250,250,248,.14);display:flex;align-items:center;justify-content:center;color:rgba(250,250,248,.45);text-decoration:none;font-size:13px;transition:all .3s}
-.sic:hover{border-color:var(--nude);color:var(--nude)}
-.fbot{background:var(--charcoal);padding:18px 80px;border-top:1px solid rgba(250,250,248,.07);display:flex;justify-content:space-between}
-.fbot p{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.22em;color:rgba(250,250,248,.28);text-transform:uppercase}
-.wa-float{position:fixed;bottom:30px;right:30px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.35);transition:transform 400ms var(--ease-out-expo),box-shadow 400ms var(--ease-out-expo);cursor:pointer;opacity:0;animation:wafade .5s 2.5s var(--ease-out-expo) forwards}
-.wa-float:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.45)}
-.wa-float:active{transform:scale(0.96)}
+.sic{width:42px;height:42px;border:1px solid rgba(44,36,32,.18);display:flex;align-items:center;justify-content:center;color:rgba(44,36,32,.5);text-decoration:none;font-size:13px;transition:all .3s}
+.sic:hover{border-color:var(--terra);color:var(--terra)}
+.fbot{background:var(--ivoire);padding:18px 80px;border-top:1px solid rgba(44,36,32,.08);display:flex;justify-content:space-between}
+.fbot p{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.22em;color:rgba(44,36,32,.45);text-transform:uppercase}
+.wa-float{position:fixed;bottom:30px;right:30px;z-index:998;display:flex;align-items:center;gap:10px;background:var(--charcoal);color:var(--white);border-radius:50px;padding:13px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;box-shadow:0 4px 22px rgba(44,36,32,.22);transition:background .35s,transform .3s,box-shadow .3s;cursor:pointer;opacity:0;animation:wafade .5s 2.5s var(--ease-out-expo) forwards;white-space:nowrap}
+.wa-float:hover{background:var(--terra);transform:translateY(-2px);box-shadow:0 8px 28px rgba(44,36,32,.25)}
+.wa-float:active{transform:translateY(0)}
 @keyframes wafade{to{opacity:1}}
 /* NAV PILL SLIDER */
 .nav-pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;padding:0;list-style:none;gap:0;background:transparent}
@@ -143,11 +143,11 @@ footer{background:var(--charcoal);padding:56px 80px;display:grid;grid-template-c
 .cband .bl{background:var(--charcoal)!important;background-image:none!important;color:var(--white)!important}
 .cband .bl:hover{background:var(--terra)!important}
 /* ═══ MARQUEE ═══ */
-.promesse-band{background:var(--charcoal);padding:20px 0;overflow:hidden}
+.promesse-band{background:var(--ivoire);padding:20px 0;overflow:hidden}
 .marquee-track{display:flex;animation:marqueeAnim 30s linear infinite;white-space:nowrap}
 .marquee-inner{display:flex;gap:0;flex-shrink:0}
-.marquee-item{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;font-weight:300;color:var(--taupe);padding:0 44px}
-.marquee-dot{color:var(--or)}
+.marquee-item{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;font-weight:300;color:var(--charcoal);padding:0 44px}
+.marquee-dot{color:var(--terra)}
 /* ═══ DIVIDER ═══ */
 .embroidery-divider{display:flex;align-items:center;justify-content:center;padding:0 48px;height:52px;overflow:hidden}
 .embroidery-divider svg{width:100%;max-width:800px;height:36px;opacity:.22}
@@ -163,26 +163,26 @@ footer{background:var(--charcoal);padding:56px 80px;display:grid;grid-template-c
 /* FONDU CONTINU ENTRE SECTIONS */
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:110px;background:linear-gradient(to bottom,transparent,var(--white));pointer-events:none;z-index:3}
 /* gradient cream supprimé */
-/* CIRCULAR SERVICES GALLERY */
-.svc-gallery{position:relative;height:470px;perspective:1700px;margin:54px 0 10px;touch-action:pan-y}
-.svc-stage{position:relative;width:100%;height:100%;transform-style:preserve-3d;will-change:transform}
-.svc-card{position:absolute;left:50%;top:50%;width:340px;height:410px;margin-left:-170px;margin-top:-205px;background:var(--white);padding:50px 40px;box-shadow:0 22px 60px rgba(44,36,32,.10);overflow:hidden;backface-visibility:hidden;cursor:grab}
-.svc-card:active{cursor:grabbing}
-.svc-card::before{content:'';position:absolute;top:0;left:40px;width:44px;height:2px;background:var(--terra)}
-.svc-card .sn{font-family:'Cormorant Garamond',serif;font-size:130px;font-weight:300;color:var(--cream);line-height:1;position:absolute;bottom:-24px;right:18px;pointer-events:none;user-select:none;z-index:0}
-.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;margin-bottom:14px;margin-top:22px;position:relative;z-index:1;color:var(--charcoal)}
-.svc-card .qt{font-style:italic;color:var(--terra);margin-bottom:14px;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.4;position:relative;z-index:1}
-.svc-card .ds{font-family:'EB Garamond',serif;font-size:14.5px;line-height:1.8;color:var(--taupe);position:relative;z-index:1}
-.svc-card .pr{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--terra);position:absolute;bottom:40px;left:40px;z-index:1}
-.svc-hint{text-align:center;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--nude);margin-top:6px}
-@media(max-width:768px){.svc-gallery{height:430px;perspective:1100px}.svc-card{width:286px;margin-left:-143px;padding:42px 32px}}
-.svc-scroll{position:relative;height:340vh;background:var(--cream)}
-.svc-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.svc-inner{width:100%;max-width:1260px;text-align:center;padding:70px 80px 0}
-.svc-inner .svc-gallery{margin:34px 0 0}
-.svc-progress{width:130px;height:2px;background:var(--blush);margin:26px auto 0;border-radius:2px;overflow:hidden}
-.svc-progress span{display:block;height:100%;width:25%;background:var(--terra);border-radius:2px;transition:width 140ms linear}
-@media(max-width:768px){.svc-scroll{height:300vh}.svc-inner{padding:96px 24px 0}}
+/* ═══════════════ SERVICES CAROUSEL HORIZONTAL ═══════════════ */
+.svc-new-wrap{position:relative;display:flex;align-items:center;padding:0 80px;gap:24px}
+.svc-new-outer{flex:1;overflow:hidden}
+.svc-new-track{display:flex;transition:transform .78s cubic-bezier(.16,1,.3,1);will-change:transform}
+.svc-new-slide{flex:0 0 100%;display:grid;grid-template-columns:240px 1fr;background:var(--white);box-shadow:0 22px 60px rgba(44,36,32,.10);min-height:380px;overflow:hidden}
+.svc-slide-accent{background:#C8B5A0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 32px;position:relative;overflow:hidden}
+.svc-slide-accent::after{content:'';position:absolute;inset:0;pointer-events:none}
+.svc-slide-num{font-family:'Cormorant Garamond',serif;font-size:110px;font-weight:300;color:rgba(44,36,32,.1);line-height:1;position:relative;z-index:1}
+.svc-slide-bar{width:2px;height:48px;background:var(--terra);margin-top:14px;position:relative;z-index:1}
+.svc-slide-body{padding:60px 70px;display:flex;flex-direction:column;justify-content:center}
+.svc-slide-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--charcoal);margin-bottom:16px}
+.svc-slide-quote{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--terra);margin-bottom:20px;line-height:1.55}
+.svc-slide-desc{font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.85;color:var(--taupe);margin-bottom:28px}
+.svc-slide-price{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--terra);padding-bottom:8px;border-bottom:1px solid var(--blush);display:inline-block}
+.svc-arr{flex:0 0 52px;width:52px;height:52px;border:1px solid rgba(44,36,32,.15);background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:var(--charcoal);flex-shrink:0}
+.svc-arr:hover{background:var(--charcoal);color:var(--white);border-color:var(--charcoal)}
+.svc-dots{display:flex;gap:8px;justify-content:center;margin-top:32px}
+.svc-dot{width:8px;height:8px;border-radius:50%;background:var(--blush);border:none;cursor:pointer;transition:all .35s var(--ease-out-expo);padding:0}
+.svc-dot.active{background:var(--terra);width:28px;border-radius:4px}
+.svc-counter-wrap{text-align:center;margin-top:10px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--nude)}
 .footer-bridge{display:none}
 @media(pointer:coarse){}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}section.s{opacity:1;transform:none;clip-path:none}.ht .hline{clip-path:none;opacity:1;animation:none}}
@@ -210,10 +210,36 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   .val-grid{grid-template-columns:1fr!important}
   .svc-grid{grid-template-columns:1fr!important}
   .avis-grid{grid-template-columns:1fr!important}
+  .svc-new-wrap{padding:0 16px;gap:12px}
+  .svc-arr{width:40px;height:40px;flex:0 0 40px}
+  .svc-new-slide{grid-template-columns:1fr;min-height:auto}
+  .svc-slide-accent{padding:36px 24px;flex-direction:row;gap:20px;align-items:center;justify-content:flex-start}
+  .svc-slide-num{font-size:72px}
+  .svc-slide-bar{width:48px;height:2px;margin-top:0}
+  .svc-slide-body{padding:28px 24px 36px}
   footer{grid-template-columns:1fr;gap:30px;padding:44px 24px}
+  .wa-float{right:16px;bottom:20px;padding:11px 18px;font-size:9px;letter-spacing:.18em}
   .fbot{padding:18px 24px;flex-direction:column;gap:6px;text-align:center}
   .cband{padding:70px 24px}
   .hb{flex-direction:column;align-items:center}
+}
+
+@media(max-width:1024px){
+  section.s{padding:80px 40px}
+  footer{grid-template-columns:1fr 1fr}
+  .fbot{padding:18px 40px}
+  .cband{padding:80px 40px}
+}
+@media(max-width:480px){
+  .wa-float{padding:10px 14px;font-size:9px;letter-spacing:.16em;bottom:18px;right:14px;gap:8px}
+}
+@media(max-width:1024px){
+  .svc-new-wrap{padding:0 40px;gap:16px}
+  .svc-new-slide{grid-template-columns:180px 1fr}
+  .svc-slide-body{padding:40px 40px}
+  .svc-arr{width:44px;height:44px;flex:0 0 44px}
+  .svc-slide-title{font-size:26px}
+  .intro-slider{padding:0 40px 80px}
 }
 </style>
 </head>
@@ -349,52 +375,95 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   </div>
 </section>
 
-<!-- NOS SERVICES — galerie circulaire pilotée par scroll -->
-<section class="svc-scroll" id="svcScroll">
-  <div class="svc-sticky">
-    <div class="svc-inner">
+<!-- NOS SERVICES — carousel horizontal -->
+<section id="svcScroll" style="background:var(--cream);padding:90px 0 110px;position:relative">
+
+  <div style="text-align:center;margin-bottom:56px;padding:0 80px">
     <span class="sl-lbl">Nos Services</span>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;margin-bottom:10px">Chaque prestation,<br><em style="font-style:italic;color:var(--terra)">pensée pour vous</em></h2>
     <p style="font-family:'EB Garamond',serif;font-size:16px;color:var(--taupe);line-height:1.85;max-width:560px;margin:0 auto">Peu importe le service choisi — vous êtes accompagnée du début à la fin.</p>
-    <div class="svc-gallery" id="svcGallery">
-      <div class="svc-stage" id="svcStage">
-        <article class="svc-card">
-          <span class="sn">01</span>
-          <h3>Création sur mesure</h3>
-          <p class="qt">"On ne part jamais d'une robe. On part de vous."</p>
-          <p class="ds">Une inspiration, une matière, un détail aperçu quelque part. Plusieurs essayages jusqu'à ce que ce soit parfait.</p>
-          <span class="pr">Sur devis — en maison</span>
-        </article>
-        <article class="svc-card">
-          <span class="sn">02</span>
-          <h3>Retouches</h3>
-          <p class="qt">"Votre robe mérite d'être parfaite. Peu importe son origine."</p>
-          <p class="ds">Umel retouche les robes ne venant pas de la maison. Devis sur envoi de vidéo via WhatsApp.</p>
-          <span class="pr">À partir de 250€</span>
-        </article>
-        <article class="svc-card">
-          <span class="sn">03</span>
-          <h3>Location</h3>
-          <p class="qt">"L'exigence d'une maison de couture. Une autre façon de vivre sa robe."</p>
-          <p class="ds">Modèles showroom disponibles à la location. Coupes : princesse, sirène, trapèze.</p>
-          <span class="pr">À partir de 1 000€</span>
-        </article>
-        <article class="svc-card">
-          <span class="sn">04</span>
-          <h3>Pressing spécialisé</h3>
-          <p class="qt">"Une robe conserve des souvenirs. Pas des traces."</p>
-          <p class="ds">Traitement soigné pour préserver les matières délicates — tissus, dentelles, broderies.</p>
-          <span class="pr">À partir de 150€</span>
-        </article>
+  </div>
+
+  <div class="svc-new-wrap">
+    <button class="svc-arr" id="svcPrev" aria-label="Service précédent">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    </button>
+
+    <div class="svc-new-outer" id="svcOuter">
+      <div class="svc-new-track" id="svcNewTrack">
+
+        <div class="svc-new-slide">
+          <div class="svc-slide-accent">
+            <span class="svc-slide-num">01</span>
+            <div class="svc-slide-bar"></div>
+          </div>
+          <div class="svc-slide-body">
+            <h3 class="svc-slide-title">Création sur mesure</h3>
+            <p class="svc-slide-quote">"On ne part jamais d'une robe. On part de vous."</p>
+            <p class="svc-slide-desc">Une inspiration, une matière, un détail aperçu quelque part. Haut d'un modèle, bas d'un autre, dentelle spécifique — ou une robe créée à partir d'une photo. Plusieurs essayages jusqu'à la perfection.</p>
+            <span class="svc-slide-price">Sur devis — en maison</span>
+          </div>
+        </div>
+
+        <div class="svc-new-slide">
+          <div class="svc-slide-accent">
+            <span class="svc-slide-num">02</span>
+            <div class="svc-slide-bar"></div>
+          </div>
+          <div class="svc-slide-body">
+            <h3 class="svc-slide-title">Retouches</h3>
+            <p class="svc-slide-quote">"Votre robe mérite d'être parfaite. Peu importe son origine."</p>
+            <p class="svc-slide-desc">Umel retouche les robes ne venant pas de la maison. Envoyez une vidéo portée via WhatsApp au 07&nbsp;49&nbsp;50&nbsp;79&nbsp;57 pour une première estimation. Devis ajusté en cabine.</p>
+            <span class="svc-slide-price">À partir de 250€</span>
+          </div>
+        </div>
+
+        <div class="svc-new-slide">
+          <div class="svc-slide-accent">
+            <span class="svc-slide-num">03</span>
+            <div class="svc-slide-bar"></div>
+          </div>
+          <div class="svc-slide-body">
+            <h3 class="svc-slide-title">Location</h3>
+            <p class="svc-slide-quote">"L'exigence d'une maison de couture. Une autre manière de vivre sa robe."</p>
+            <p class="svc-slide-desc">Les modèles du showroom sont disponibles à la location. Coupes&nbsp;: princesse, sirène, trapèze. Sélectionnés avec le même soin que les créations sur mesure.</p>
+            <span class="svc-slide-price">À partir de 1 000€</span>
+          </div>
+        </div>
+
+        <div class="svc-new-slide">
+          <div class="svc-slide-accent">
+            <span class="svc-slide-num">04</span>
+            <div class="svc-slide-bar"></div>
+          </div>
+          <div class="svc-slide-body">
+            <h3 class="svc-slide-title">Pressing spécialisé</h3>
+            <p class="svc-slide-quote">"Une robe conserve des souvenirs. Pas des traces."</p>
+            <p class="svc-slide-desc">Traitement soigné pour préserver les matières les plus délicates — tissus, dentelles, broderies. Pour le grand jour, et pour les années qui suivent.</p>
+            <span class="svc-slide-price">À partir de 150€</span>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="svc-progress"><span id="svcProgFill"></span></div>
-    <div class="svc-hint" id="svcHint">Service 1 sur 4</div>
-    <div style="margin-top:30px">
-      <a href="nos-robes-services.html" class="bs">Voir tous nos services</a>
-    </div>
-    </div>
+
+    <button class="svc-arr" id="svcNext" aria-label="Service suivant">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
   </div>
+
+  <div class="svc-dots" id="svcDots">
+    <button class="svc-dot active" data-i="0"></button>
+    <button class="svc-dot" data-i="1"></button>
+    <button class="svc-dot" data-i="2"></button>
+    <button class="svc-dot" data-i="3"></button>
+  </div>
+  <p class="svc-counter-wrap" id="svcCounter">01 / 04</p>
+
+  <div style="text-align:center;margin-top:40px">
+    <a href="nos-robes-services.html" class="bs">Voir tous nos services</a>
+  </div>
+
 </section>
 
 <!-- AVIS CLIENTES 3D -->
@@ -436,7 +505,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
 <!-- FOOTER -->
 <footer>
   <div class="fb">
-    <img src="logo_umel_couture.webp" alt="Umel Couture" style="height:84px;width:auto;display:block;margin-bottom:14px;filter:brightness(0) invert(1);opacity:0.9">
+    <img src="logo_umel_couture.webp" alt="Umel Couture" style="height:84px;width:auto;display:block;margin-bottom:14px">
     <p><em>La robe qui vous ressemble. Vraiment.</em></p>
   </div>
   <div class="fl">
@@ -458,7 +527,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
       <a href="#" class="sic">FB</a>
       <a href="#" class="sic">TK</a>
     </div>
-    <p style="font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(250,250,248,.38);margin-top:22px;line-height:1.85">Rejoignez notre communauté et inspirez-vous des plus belles créations.</p>
+    <p style="font-family:'EB Garamond',serif;font-size:13.5px;color:rgba(44,36,32,.5);margin-top:22px;line-height:1.85">Rejoignez notre communauté et inspirez-vous des plus belles créations.</p>
   </div>
 </footer>
 <div class="fbot">
@@ -469,9 +538,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
 <div class="footer-bridge"></div>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/33749507957" class="wa-float" title="Nous contacter sur WhatsApp" target="_blank" rel="noopener">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<a href="https://wa.me/33749507957" class="wa-float" title="Nous contacter sur WhatsApp" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Écrire sur WhatsApp</a>
 
 <script>
 const nav=document.getElementById('nav');
@@ -505,60 +572,62 @@ if(hbg){var navEl=document.getElementById('nav');hbg.addEventListener('click',fu
 function navPillHover(el){var c=document.getElementById('navPillCursor');if(!c)return;c.style.width=el.offsetWidth+'px';c.style.left=el.offsetLeft+'px';c.style.opacity='1';}
 var navPill=document.getElementById('navPill');
 if(navPill)navPill.addEventListener('mouseleave',function(){var c=document.getElementById('navPillCursor');if(c)c.style.opacity='0';});
-// CIRCULAR SERVICES GALLERY — pilotée par le scroll
+// CAROUSEL SERVICES HORIZONTAL
 (function(){
-  var stage=document.getElementById('svcStage');if(!stage)return;
-  var scroll=document.getElementById('svcScroll');
-  var fill=document.getElementById('svcProgFill');
-  var hint=document.getElementById('svcHint');
-  var cards=[].slice.call(stage.querySelectorAll('.svc-card'));
-  var n=cards.length,step=360/n;
-  var radius=window.innerWidth<768?300:380;
-  var rot=0,ticking=false;
-  function layout(){radius=window.innerWidth<768?300:380;cards.forEach(function(c,i){c.style.transform='rotateY('+(i*step)+'deg) translateZ('+radius+'px)';});}
-  function render(){
-    stage.style.transform='rotateY('+rot+'deg)';
-    cards.forEach(function(c,i){
-      var a=((i*step+rot)%360+360)%360;var d=a>180?360-a:a;
-      c.style.opacity=Math.max(0.18,1-d/150).toFixed(3);
-      c.style.pointerEvents=d<46?'auto':'none';
-    });
+  const track=document.getElementById('svcNewTrack');if(!track)return;
+  const outer=document.getElementById('svcOuter');
+  const prevBtn=document.getElementById('svcPrev');
+  const nextBtn=document.getElementById('svcNext');
+  const dots=[].slice.call(document.querySelectorAll('.svc-dot'));
+  const counter=document.getElementById('svcCounter');
+  const total=4;let cur=0,timer;
+  function go(n){
+    cur=(n+total)%total;
+    track.style.transform='translateX(-'+(cur*100)+'%)';
+    dots.forEach(function(d,i){d.classList.toggle('active',i===cur);});
+    if(counter)counter.textContent='0'+(cur+1)+' / 0'+total;
   }
-  function update(){
-    var rect=scroll.getBoundingClientRect();
-    var total=scroll.offsetHeight-window.innerHeight;
-    var p=total>0?Math.max(0,Math.min(1,(-rect.top)/total)):0;
-    rot=-p*270;                 // 0 → -270° : les 4 services défilent dans l'ordre
-    render();
-    if(fill)fill.style.width=(25+p*75)+'%';
-    if(hint)hint.textContent='Service '+Math.min(4,Math.floor(p*3.999)+1)+' sur 4';
+  function startAuto(){clearInterval(timer);timer=setInterval(function(){go(cur+1);},5200);}
+  if(prevBtn)prevBtn.addEventListener('click',function(){go(cur-1);startAuto();});
+  if(nextBtn)nextBtn.addEventListener('click',function(){go(cur+1);startAuto();});
+  dots.forEach(function(d,i){d.addEventListener('click',function(){go(i);startAuto();});});
+  var sx=0;
+  if(outer){
+    outer.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+    outer.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){dx<0?go(cur+1):go(cur-1);startAuto();}},{passive:true});
   }
-  layout();update();
-  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){update();ticking=false;});ticking=true;}},{passive:true});
-  window.addEventListener('resize',function(){layout();update();});
+  startAuto();
 })();
-// TESTIMONIALS COLONNES
+// TESTIMONIALS COLONNES — vrais avis Google
 var reviewsNew=[
-  {name:'Marie-Claire B.',role:'Mariée 2024',text:'"Umi a créé la robe de mes rêves. Trois essayages, une patience infinie — et une robe que je n\'aurais jamais osé imaginer seule."',img:'https://randomuser.me/api/portraits/women/11.jpg'},
-  {name:'Sophie L.',role:'Mariée 2023',text:'"Tout a été fluide, à l\'écoute. Elles ont compris exactement ce que je voulais — même ce que je ne savais pas encore nommer."',img:'https://randomuser.me/api/portraits/women/22.jpg'},
-  {name:'Camille R.',role:'Mariée 2024',text:'"Melissa m\'a dit exactement ce qui allait ou non. Pas pour me faire plaisir — pour que la robe soit vraiment la mienne."',img:'https://randomuser.me/api/portraits/women/33.jpg'},
-  {name:'Élodie M.',role:'Mariée 2023',text:'"J\'ai apporté une photo d\'inspiration et une idée vague. Ce qu\'elles ont créé à partir de ça me dépasse complètement."',img:'https://randomuser.me/api/portraits/women/44.jpg'},
-  {name:'Léa D.',role:'Retouches 2024',text:'"Les retouches étaient impeccables. Précision, soin des matières. Ma robe venait d\'ailleurs et ils l\'ont rendue parfaite pour moi."',img:'https://randomuser.me/api/portraits/women/55.jpg'},
-  {name:'Inès F.',role:'Mariée 2024',text:'"Ici il n\'y a pas de standard. Il y a votre corps et votre histoire. C\'est tout. C\'est ce que j\'avais cherché."',img:'https://randomuser.me/api/portraits/women/66.jpg'},
-  {name:'Anaïs P.',role:'Mariée 2023',text:'"Cinq mois d\'échanges respectueux et précis. Et une robe qui a fait pleurer toute la salle le jour J."',img:'https://randomuser.me/api/portraits/women/77.jpg'},
-  {name:'Julie T.',role:'Mariée 2024',text:'"Umi et Melissa ont su capter quelque chose que je ne savais pas encore nommer. La robe était exactement juste."',img:'https://randomuser.me/api/portraits/women/88.jpg'},
-  {name:'Manon C.',role:'Pressing 2024',text:'"Le pressing a redonné vie à la robe de ma mère. Une attention aux détails qui tient du miracle."',img:'https://randomuser.me/api/portraits/women/99.jpg'},
-  {name:'Charlotte V.',role:'Mariée 2023',text:'"Pas de collection imposée, pas de pression. Juste deux femmes qui créent. La robe était unique parce que je le suis."',img:'https://randomuser.me/api/portraits/women/12.jpg'},
-  {name:'Clara B.',role:'Location 2024',text:'"J\'ai choisi la location et j\'ai eu le même niveau d\'attention qu\'une création sur mesure. C\'est ça Umel."',img:'https://randomuser.me/api/portraits/women/23.jpg'},
-  {name:'Pauline G.',role:'Retouches 2023',text:'"La robe était méconnaissable — dans le meilleur sens du terme. Un travail d\'orfèvre."',img:'https://randomuser.me/api/portraits/women/34.jpg'}
+  {name:'Sandrine Tanet',role:'il y a 8 mois',text:'Un immense merci aux vendeuses pour leur professionnalisme, leur patience et leurs précieux conseils lors de mes essayages. Ce n\'était pas gagné au départ, car après trois essayages j\'étais très hésitante, mais grâce à leur écoute et leur accompagnement bienveillant, j\'ai trouvé LA robe et j\'ai même réservé dès le premier essayage ! Trop contente de cette expérience inoubliable 🥰'},
+  {name:'Myriam Mehrie',role:'il y a 8 mois',text:'Les filles un conseil FONCEZ ! Je viens tout juste de trouver ma robe chez UMEL et ça été MA meilleure expérience dans une boutique de robe de mariée ! Les prestations sont de qualité et l\'équipe est vraiment attentive au besoin, elles sont de très bon conseils et d\'une gentillesse incroyable ! Merci encore pour tout UMEL COUTURE'},
+  {name:'eliza kaya',role:'il y a 7 mois',text:'J\'ai eu un immense plaisir à faire mes essayages chez Umel Couture. Merci pour votre accueil chaleureux, votre disponibilité et vos conseils toujours bienveillants. Un remerciement tout particulier à Mélissa pour sa sensibilité et sa vision, qui ont donné vie à une robe à mon image. Une expérience unique que je recommande sans hésiter. 🤍'},
+  {name:'Camille Couty',role:'il y a 5 mois',text:'Quelle erreur d\'avoir fait mon premier essayage chez Umel !! Les robes sont tellement incroyables tout comme l\'accueil qu\'il y est difficile d\'apprécier d\'autres essayages par la suite. Elles valent leurs prix quand on voit la qualité des tissus et le travail dessus. Si vous avez un bon budget allez y les yeux fermés. Ne changez rien !'},
+  {name:'DE SA VIEIRA Andréa',role:'il y a 7 mois',text:'Une expérience incroyable chez Umel Couture. Je souhaite souligner le professionnalisme, la gentillesse de Mélissa et Lina. J\'étais dans l\'hésitation entre une robe sirène et une princesse et la solution de Mélissa — un mixte des 2 — a visé juste. J\'ai trouvé la robe de ma vie grâce à leurs conseils. 🤍'},
+  {name:'Rebecca Paisley',role:'il y a 8 mois',text:'Je suis venue pour un premier essayage de robe de mariée et ce fut une superbe expérience. Les vendeuses sont agréables, gentilles et ont vraiment pris le temps de me conseiller et me guider. Elles ont créé une superbe ambiance (avec de la musique et on a même dansé). Je recommande à 200 %. Les robes sont juste splendides ! Un rêve devenu réalité. Merci encore ❤️'},
+  {name:'Jade Ludmila Marie-Joseph',role:'il y a 8 mois',text:'Meilleure expérience d\'essayage de robe 😍 La recherche d\'une robe de mariée est très stressante mais j\'ai eu une expérience unique et agréable chez UMEL. Une mention particulière à ma conseillère Lynda, qui m\'a mise à l\'aise dès le départ. Elle connaît très bien son métier, à l\'écoute, douce et agréable. Je recommande vraiment cette adresse.'},
+  {name:'Kenza Braham',role:'il y a 3 mois',text:'Ma robe de mariée sur mesure est en cours de création et j\'ai adoré l\'accueil 🤍 L\'équipe est adorable, à l\'écoute et très professionnelle. On se sent tout de suite à l\'aise et en confiance. Je recommande à 100 % ✨'},
+  {name:'gwladys guionfirmin',role:'il y a 8 mois',text:'Super accueil ! Une expérience inoubliable ! Merci pour ce merveilleux moment. Merci pour votre professionnalisme, vos conseils avisés, votre gentillesse et votre bienveillance. Vos créations sont MAGNIFIQUES ! Je recommanderai sans hésiter votre adresse à toutes les futures mariées qui recherchent une robe exceptionnelle. À très vite 🥰'},
+  {name:'Inès',role:'il y a 3 mois',text:'Accueil chaleureux et vendeuse très agréable. J\'ai pu trouver la robe de mes rêves grâce à leur spécialité principale : la confection de robes sur mesure. Encore un grand merci à toutes !'},
+  {name:'Elisa Folha',role:'il y a 6 mois',text:'J\'ai fait mon essayage de robe de mariée chez Umel Couture et j\'ai adoré ! Leurs robes sont justes splendides. Je voulais remercier infiniment notamment Mélissa et Lynda pour leur accueil, leurs conseils et surtout pour leur gentillesse incroyable ! Encore mille merci !!'},
+  {name:'Inès Ngambali',role:'il y a 6 mois',text:'J\'ai fait 4 boutiques de robes et UMEL est la première où je me suis sentie aussi bien ! Une ambiance que vous trouverez nulle part ailleurs et des conseils tout justes exceptionnels. Merci infiniment pour cette expérience que je n\'oublierai jamais. Les filles vous êtes des personnes tellement humaines ❤️'},
+  {name:'Amandine E',role:'il y a 6 mois',text:'La plus belle expérience que j\'ai vécue. Lynda nous a accueilli avec le sourire dès notre arrivée, elle m\'a mise en confiance et m\'a fait passer un merveilleux moment. Résultat j\'ai trouvé la robe de mes rêves, faite sur mesure avec chaque détail qui me correspond. Merci à Lynda et toute l\'équipe.'},
+  {name:'Jerina Lembe',role:'il y a 7 mois',text:'C\'était mon tout premier essayage de robe de mariée, et ce fut un moment absolument incroyable, rempli d\'émotion et de bonheur. Un immense merci à Lynda et à sa collègue pour leur écoute, leur gentillesse et leur attention à chaque instant. Je recommande vivement cette boutique !'},
+  {name:'Jilali Id',role:'il y a un an',text:'Dès mon arrivée dans la boutique, j\'ai été impressionné par l\'élégance du lieu, la qualité des créations et surtout l\'accueil irréprochable de l\'équipe. Chaque robe est une véritable œuvre d\'art. L\'essayage s\'est déroulé dans une ambiance agréable et sans précipitation. UMEL COUTURE est sans aucun doute l\'adresse idéale.'},
+  {name:'Célia Da Costa',role:'il y a 6 mois',text:'J\'ai eu une expérience incroyable chez Umel Couture. Un immense merci à Lynda, qui m\'a accompagnée à chacun de mes rendez-vous avec tellement de douceur, de patience et d\'écoute. J\'ai récupéré ma robe en un mois, avec toutes les modifications réalisées à la perfection. Le résultat est juste sublime ! Je recommande à 100 % ✨'},
+  {name:'Selma Coskun',role:'il y a 3 mois',text:'Je recommande Umel Couture les yeux fermés ! ✨ Dès mon premier rendez-vous, j\'ai été accueillie avec énormément de gentillesse et de professionnalisme. Leur professionnalisme et la qualité de leurs conseils ont fait toute la différence : j\'ai trouvé ma robe dès le premier rendez-vous. Je recommande à 100 %. J\'ai maintenant hâte de découvrir ma robe finale ✨🤍'}
 ];
-function mkNewCard(r){return '<div class="tcard-new"><p class="tcard-new-text">'+r.text+'</p><div class="tcard-new-footer"><img class="tcard-new-avatar" src="'+r.img+'" alt="'+r.name+'" loading="lazy"><div><span class="tcard-new-name">'+r.name+'</span><span class="tcard-new-role">'+r.role+'</span></div></div></div>';}
+var avatarColors=['#C4756A','#C4A96B','#D4A99A','#8A7F78','#A0785A','#C8B5A0','#E8C9BC'];
+function getAvatarColor(name){var h=0;for(var i=0;i<name.length;i++)h+=name.charCodeAt(i);return avatarColors[h%avatarColors.length];}
+function mkAvatar(name){var c=getAvatarColor(name);var init=name.charAt(0).toUpperCase();return '<div class="tcard-new-avatar" style="background:'+c+';display:flex;align-items:center;justify-content:center;font-family:\'Jost\',sans-serif;font-size:14px;font-weight:500;color:#fff;flex-shrink:0;">'+init+'</div>';}
+function mkNewCard(r){return '<div class="tcard-new"><p class="tcard-new-text" style="margin-bottom:16px;">'+r.text+'</p><div class="tcard-new-footer">'+mkAvatar(r.name)+'<div><span class="tcard-new-name">'+r.name+'</span><span class="tcard-new-role">★★★★★ · '+r.role+'</span></div></div></div>';}
 var wrap=document.getElementById('testiNewWrap');
 if(wrap){
   [
-    {reviews:reviewsNew.slice(0,4),dur:16},
-    {reviews:reviewsNew.slice(4,8),dur:20},
-    {reviews:reviewsNew.slice(8,12),dur:18}
+    {reviews:reviewsNew.slice(0,6),dur:22},
+    {reviews:reviewsNew.slice(6,12),dur:28},
+    {reviews:reviewsNew.slice(12,17),dur:24}
   ].forEach(function(conf){
     var col=document.createElement('div');col.className='testi-new-col';
     var track=document.createElement('div');track.className='testi-new-track';
