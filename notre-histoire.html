@@ -149,9 +149,14 @@ blockquote{opacity:0;transition:opacity 0.6s var(--ease-out-expo) 0.5s}
   .hero-title .line:nth-child(1) span,.hero-title .line:nth-child(2) span{font-size:clamp(34px,9vw,52px)}
   .hero-title .line:nth-child(3) span{font-size:clamp(30px,8vw,46px)}
   .hero-scroll-indicator{display:none}
-  section.s{padding:70px 24px!important}
+  section.s{padding:64px 22px!important}
   .bio-grid{grid-template-columns:1fr!important}
-  .val-grid{grid-template-columns:1fr!important}
+  /* Grille valeurs UMEL — 2 colonnes compactes */
+  .val-grid{grid-template-columns:1fr 1fr!important;gap:2px!important}
+  .val-grid>div{padding:32px 18px!important}
+  .val-grid>div>div:first-child{font-size:46px!important;margin-bottom:12px!important}
+  .val-grid h3{font-size:19px!important;margin-bottom:10px!important}
+  .val-grid p{font-size:13.5px!important}
   .stats-grid{grid-template-columns:repeat(2,1fr)!important}
   .embroidery-divider{padding:0 24px}
   .corner-stitch{width:44px;height:44px}
@@ -161,7 +166,7 @@ blockquote{opacity:0;transition:opacity 0.6s var(--ease-out-expo) 0.5s}
   .cband{padding:70px 24px}
 }
 
-@media(max-width:1024px){
+@media(min-width:769px) and (max-width:1024px){
   section.s{padding:80px 40px}
   footer{grid-template-columns:1fr 1fr}
   .fbot{padding:18px 40px}
@@ -170,7 +175,7 @@ blockquote{opacity:0;transition:opacity 0.6s var(--ease-out-expo) 0.5s}
 @media(max-width:480px){
   .wa-float{padding:10px 14px;font-size:9px;letter-spacing:.16em;bottom:18px;right:14px;gap:8px}
 }
-@media(max-width:1024px){
+@media(min-width:769px) and (max-width:1024px){
   .page-hero{padding:0 40px 80px}
   .bio-grid{grid-template-columns:1fr!important}
   .stats-grid{grid-template-columns:repeat(2,1fr)!important}

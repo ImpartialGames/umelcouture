@@ -205,24 +205,46 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   #nav.open .nav-pill-item.active a{color:var(--terra)}
   #nav.open .nav-cta{display:inline-block;margin-top:26px;font-size:11px;padding:15px 38px}
   .nav-logo-img{height:42px}
-  section.s{padding:70px 24px!important}
+  section.s{padding:64px 22px!important}
   .hist-grid{grid-template-columns:1fr!important}
-  .val-grid{grid-template-columns:1fr!important}
-  .umel-vals{grid-template-columns:1fr!important}
-  .umel-vals>div{border-right:none!important;padding:28px 0!important;border-bottom:1px solid rgba(196,169,107,.1)}
+  /* Grille valeurs "Ce en quoi nous croyons" — 2 colonnes compactes */
+  .val-grid{grid-template-columns:1fr 1fr!important;gap:2px!important}
+  .val-grid>div{padding:34px 18px!important}
+  .val-grid>div>div:first-child{font-size:46px!important;margin-bottom:12px!important}
+  .val-grid h3{font-size:19px!important;margin-bottom:10px!important}
+  .val-grid p{font-size:13.5px!important}
+  /* Notre Engagement (brun) — 2 colonnes */
+  .umel-vals{grid-template-columns:1fr 1fr!important;gap:0!important}
+  .umel-vals>div{border-right:none!important;padding:32px 18px!important;border-bottom:1px solid rgba(196,169,107,.12)}
+  .umel-vals>div:nth-child(odd){border-right:1px solid rgba(196,169,107,.12)!important}
+  .umel-vals>div>div:first-child{font-size:64px!important;margin-bottom:12px!important}
+  .umel-vals h3{font-size:19px!important}
+  .umel-vals p{font-size:13.5px!important}
+  /* Les Fondatrices — 1 colonne */
   .fond-grid{grid-template-columns:1fr!important}
   .fond-grid>div{border-right:none!important;padding:40px 0!important}
-  .hist-body-grid{grid-template-columns:1fr!important}
+  .fond-grid>div:first-child{border-bottom:1px solid var(--blush)}
+  .fond-grid>div>div:first-child{font-size:80px!important}
+  /* Notre Histoire — corps pleine largeur */
+  .hist-body-grid{grid-template-columns:1fr!important;gap:0!important}
   .hist-cite{display:none}
+  /* Stats Notre Histoire — en colonne, centrées */
+  .hist-stats{flex-wrap:wrap;gap:28px;justify-content:center;text-align:center}
+  .hist-stats>div{margin-right:0!important}
+  .hist-stats-ring{display:none}
+  .hist-stats .bs{flex-basis:100%;text-align:center;margin-top:6px}
   .svc-grid{grid-template-columns:1fr!important}
   .avis-grid{grid-template-columns:1fr!important}
-  .svc-new-wrap{padding:0 16px;gap:12px}
-  .svc-arr{width:40px;height:40px;flex:0 0 40px}
-  .svc-new-slide{grid-template-columns:1fr;min-height:auto}
-  .svc-slide-accent{padding:36px 24px;flex-direction:row;gap:20px;align-items:center;justify-content:flex-start}
-  .svc-slide-num{font-size:72px}
-  .svc-slide-bar{width:48px;height:2px;margin-top:0}
-  .svc-slide-body{padding:28px 24px 36px}
+  /* Carousel services — pleine largeur, flèches masquées (swipe + dots) */
+  .svc-new-wrap{padding:0 22px;gap:0}
+  .svc-arr{display:none}
+  .svc-new-slide{grid-template-columns:1fr!important;min-height:auto}
+  .svc-slide-accent{padding:28px 24px!important;flex-direction:row;gap:18px;align-items:center;justify-content:flex-start}
+  .svc-slide-num{font-size:64px}
+  .svc-slide-bar{width:40px;height:2px;margin-top:0}
+  .svc-slide-body{padding:30px 26px 36px!important}
+  .svc-slide-title{font-size:25px!important}
+  .svc-slide-desc{font-size:15px!important}
   footer{grid-template-columns:1fr;gap:30px;padding:44px 24px}
   .wa-float{right:16px;bottom:20px;padding:11px 18px;font-size:9px;letter-spacing:.18em}
   .fbot{padding:18px 24px;flex-direction:column;gap:6px;text-align:center}
@@ -230,7 +252,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   .hb{flex-direction:column;align-items:center}
 }
 
-@media(max-width:1024px){
+@media(min-width:769px) and (max-width:1024px){
   section.s{padding:80px 40px}
   footer{grid-template-columns:1fr 1fr}
   .umel-vals{grid-template-columns:repeat(2,1fr)!important}
@@ -247,7 +269,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
 @media(max-width:480px){
   .wa-float{padding:10px 14px;font-size:9px;letter-spacing:.16em;bottom:18px;right:14px;gap:8px}
 }
-@media(max-width:1024px){
+@media(min-width:769px) and (max-width:1024px){
   .svc-new-wrap{padding:0 40px;gap:16px}
   .svc-new-slide{grid-template-columns:180px 1fr}
   .svc-slide-body{padding:40px 40px}
@@ -441,13 +463,13 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
     </div>
 
     <!-- Stats + bouton sur la même ligne -->
-    <div style="display:flex;align-items:center;padding-top:32px;border-top:1px solid var(--blush)">
+    <div class="hist-stats" style="display:flex;align-items:center;padding-top:32px;border-top:1px solid var(--blush)">
       <div style="margin-right:36px">
         <strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal);line-height:1">4,8</strong>
         <span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Note Google · <span id="c1">331</span> avis</span>
       </div>
       <!-- Anneau séparateur -->
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="color:var(--blush);margin-right:36px;flex-shrink:0;opacity:.8">
+      <svg class="hist-stats-ring" width="18" height="18" viewBox="0 0 18 18" fill="none" style="color:var(--blush);margin-right:36px;flex-shrink:0;opacity:.8">
         <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.1"/>
         <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width=".8"/>
       </svg>

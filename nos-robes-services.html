@@ -271,20 +271,23 @@ footer{background:var(--cream);padding:56px 80px;display:grid;grid-template-colu
   section.s{padding:70px 24px!important}
   .stage{grid-template-columns:1fr!important}
   .viewer-grid-wrap{height:300px!important;border-radius:12px!important}
-  .svc-new-wrap{padding:0 16px;gap:12px}
-  .svc-arr{width:40px;height:40px;flex:0 0 40px}
-  .svc-new-slide{grid-template-columns:1fr;min-height:auto}
-  .svc-slide-accent{padding:36px 24px;flex-direction:row;gap:20px;align-items:center;justify-content:flex-start}
-  .svc-slide-num{font-size:72px}
-  .svc-slide-bar{width:48px;height:2px;margin-top:0}
-  .svc-slide-body{padding:28px 24px 36px}
+  /* Carousel services — pleine largeur, flèches masquées (swipe + dots) */
+  .svc-new-wrap{padding:0 22px;gap:0}
+  .svc-arr{display:none}
+  .svc-new-slide{grid-template-columns:1fr!important;min-height:auto}
+  .svc-slide-accent{padding:28px 24px!important;flex-direction:row;gap:18px;align-items:center;justify-content:flex-start}
+  .svc-slide-num{font-size:64px}
+  .svc-slide-bar{width:40px;height:2px;margin-top:0}
+  .svc-slide-body{padding:30px 26px 36px!important}
+  .svc-slide-title{font-size:25px!important}
+  .svc-slide-desc{font-size:15px!important}
   footer{grid-template-columns:1fr;gap:30px;padding:44px 24px}
   .wa-float{right:16px;bottom:20px;padding:11px 18px;font-size:9px;letter-spacing:.18em}
   .fbot{padding:18px 24px;flex-direction:column;gap:6px;text-align:center}
   .cband{padding:70px 24px}
 }
 
-@media(max-width:1024px){
+@media(min-width:769px) and (max-width:1024px){
   section.s{padding:80px 40px}
   footer{grid-template-columns:1fr 1fr}
   .fbot{padding:18px 40px}
@@ -293,7 +296,7 @@ footer{background:var(--cream);padding:56px 80px;display:grid;grid-template-colu
 @media(max-width:480px){
   .wa-float{padding:10px 14px;font-size:9px;letter-spacing:.16em;bottom:18px;right:14px;gap:8px}
 }
-@media(max-width:1024px){
+@media(min-width:769px) and (max-width:1024px){
   .page-hero{padding:0 40px 80px}
   .svc-new-wrap{padding:0 40px;gap:16px}
   .svc-new-slide{grid-template-columns:180px 1fr}
