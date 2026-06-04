@@ -208,6 +208,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   section.s{padding:70px 24px!important}
   .hist-grid{grid-template-columns:1fr!important}
   .val-grid{grid-template-columns:1fr!important}
+  .umel-vals{grid-template-columns:1fr!important}
+  .umel-vals>div{border-right:none!important;padding:28px 0!important;border-bottom:1px solid rgba(196,169,107,.1)}
+  .fond-grid{grid-template-columns:1fr!important}
+  .fond-grid>div{border-right:none!important;padding:40px 0!important}
   .svc-grid{grid-template-columns:1fr!important}
   .avis-grid{grid-template-columns:1fr!important}
   .svc-new-wrap{padding:0 16px;gap:12px}
@@ -227,6 +231,13 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
 @media(max-width:1024px){
   section.s{padding:80px 40px}
   footer{grid-template-columns:1fr 1fr}
+  .umel-vals{grid-template-columns:repeat(2,1fr)!important}
+  .umel-vals>div:nth-child(2){border-right:none}
+  .umel-vals>div:nth-child(3){border-right:1px solid rgba(196,169,107,.12)}
+  .umel-vals>div{padding:36px 28px!important}
+  .fond-grid{grid-template-columns:1fr 1fr}
+  .fond-grid>div:first-child{padding:48px 40px 48px 0!important}
+  .fond-grid>div:last-child{padding:48px 0 48px 40px!important}
   .fbot{padding:18px 40px}
   .cband{padding:80px 40px}
 }
@@ -321,55 +332,78 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9900;o
   </div>
 </div>
 
-<!-- VALEURS DE MARQUE -->
-<section style="background:var(--cream);padding:90px 80px" class="s">
+<!-- NOTRE ENGAGEMENT — UMEL -->
+<section class="s" style="background:var(--brun);padding:90px 80px;overflow:hidden">
   <div style="max-width:1260px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:60px">
-      <span class="sl-lbl">Notre engagement</span>
+    <div style="margin-bottom:64px">
+      <span class="sl-lbl" style="color:rgba(196,169,107,.65)">Notre Engagement</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4.5vw,64px);font-weight:300;color:var(--blanc);line-height:1.1">Ce qui nous <em style="font-style:italic;color:var(--or)">définit.</em></h2>
     </div>
-    <div class="val-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:60px;text-align:center">
-      <div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--blush);margin-bottom:18px">R</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--charcoal);margin-bottom:12px">Révélation</h3>
-        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe);font-style:italic">La robe ne transforme pas. Elle révèle.</p>
+    <div class="umel-vals" style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(196,169,107,.18)">
+      <div style="padding:48px 40px 48px 0;border-right:1px solid rgba(196,169,107,.12)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:rgba(196,169,107,.14);line-height:1;margin-bottom:20px">U</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--blanc);margin-bottom:12px">Universalité</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:15px;line-height:1.85;color:rgba(250,247,242,.42);font-style:italic">Toutes les femmes. Toutes les cultures. Sans exception.</p>
       </div>
-      <div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--blush);margin-bottom:18px">I</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--charcoal);margin-bottom:12px">Intégrité</h3>
-        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe);font-style:italic">On vous dit toujours la vérité. Même si ça déplait.</p>
+      <div style="padding:48px 40px;border-right:1px solid rgba(196,169,107,.12)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:rgba(196,169,107,.14);line-height:1;margin-bottom:20px">M</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--blanc);margin-bottom:12px">Mesure</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:15px;line-height:1.85;color:rgba(250,247,242,.42);font-style:italic">On ne part jamais d'une robe. On part de vous.</p>
       </div>
-      <div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--blush);margin-bottom:18px">E</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--charcoal);margin-bottom:12px">Exigence</h3>
-        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.85;color:var(--taupe);font-style:italic">Chaque détail a une raison d'exister.</p>
+      <div style="padding:48px 40px;border-right:1px solid rgba(196,169,107,.12)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:rgba(196,169,107,.14);line-height:1;margin-bottom:20px">E</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--blanc);margin-bottom:12px">Écoute</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:15px;line-height:1.85;color:rgba(250,247,242,.42);font-style:italic">On observe avant de dessiner. On comprend avant de créer.</p>
+      </div>
+      <div style="padding:48px 0 48px 40px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:rgba(196,169,107,.14);line-height:1;margin-bottom:20px">L</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--blanc);margin-bottom:12px">Loyauté</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:15px;line-height:1.85;color:rgba(250,247,242,.42);font-style:italic">On vous dira toujours la vérité. Même si ça déplait.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NOTRE HISTOIRE — APERÇU -->
-<section class="s" style="padding:110px 80px">
-  <div class="hist-grid" style="max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center">
-    <div>
-      <span class="sl-lbl">Notre Histoire</span>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;line-height:1.1;margin-bottom:28px">Umel n'est pas une marque<br><em style="font-style:italic;color:var(--terra)">créée pour le marché.</em></h2>
-      <p style="font-family:'EB Garamond',serif;font-size:16.5px;line-height:1.9;color:var(--taupe);margin-bottom:18px">Umel est née de deux femmes. Umi. Melissa. Deux visions, deux sensibilités, un seul nom — et une seule exigence : créer la maison qu'elles auraient voulu trouver.</p>
-      <p style="font-family:'EB Garamond',serif;font-size:16.5px;line-height:1.9;color:var(--taupe);margin-bottom:36px">Parmi les premières en Île-de-France à avoir placé le sur-mesure au centre de leur identité. Une réputation construite par le bouche-à-oreille — pas par le bruit.</p>
-      <div style="display:flex;gap:36px;margin-bottom:36px">
-        <div><strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal)">4,8</strong><span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Note Google · <span id="c1">331</span> avis</span></div>
-        <div><strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal)">100%</strong><span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Sur mesure</span></div>
-        <div><strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal)">∞</strong><span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Possibilités</span></div>
-      </div>
-      <a href="notre-histoire.html" class="bs">Découvrir notre histoire</a>
+<!-- NOTRE HISTOIRE -->
+<section class="s" style="background:var(--white);padding:110px 80px">
+  <div style="max-width:840px;margin:0 auto">
+    <span class="sl-lbl">Notre Histoire</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5.8vw,84px);font-weight:300;line-height:1.06;color:var(--charcoal);margin-bottom:8px">Née de deux femmes.</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.6vw,66px);font-weight:300;font-style:italic;line-height:1.1;color:var(--terra);margin-bottom:56px">Umi <span style="font-style:normal;font-size:.55em;vertical-align:middle;opacity:.7">—◦—</span> Melissa</h2>
+    <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.95;color:var(--taupe);margin-bottom:22px">Umel n'est pas née dans une salle de réunion. Elle n'a pas été pensée autour d'un positionnement marketing. Elle est née de deux visions, deux sensibilités, un seul nom.</p>
+    <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.95;color:var(--taupe);margin-bottom:22px">Avant la première robe. Avant la première cliente. La marque portait déjà quelque chose de rare — une histoire vraie. Et ça change tout.</p>
+    <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.95;color:var(--taupe);margin-bottom:48px">Parce qu'Umel ne cherche pas à vendre du mariage. Umel cherche à créer une robe qui ressemble réellement à la femme qui la porte.</p>
+    <div style="display:flex;gap:48px;margin-bottom:44px;padding-top:32px;border-top:1px solid var(--blush)">
+      <div><strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal)">4,8</strong><span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Note Google · <span id="c1">331</span> avis</span></div>
+      <div><strong style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;display:block;color:var(--charcoal)">100%</strong><span style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe)">Sur mesure</span></div>
     </div>
-    <div style="position:relative;height:580px">
-      <div style="width:100%;height:100%;background:linear-gradient(160deg,#F2EDE6,#E8C9BC);display:flex;align-items:center;justify-content:center">
-        <span style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--taupe)">Photo à venir</span>
+    <a href="notre-histoire.html" class="bs">Découvrir notre histoire</a>
+  </div>
+</section>
+
+<!-- LES FONDATRICES -->
+<section class="s" style="background:var(--cream);padding:110px 80px">
+  <div style="max-width:1260px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:64px">
+      <span class="sl-lbl">Les Fondatrices</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,68px);font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:2px">Deux visions.</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,62px);font-weight:300;font-style:italic;line-height:1.15;color:var(--terra)">Une seule exigence.</h2>
+      <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-top:28px">
+        <div style="flex:1;max-width:180px;height:1px;border-top:1px dashed rgba(196,169,107,.45)"></div>
+        <span style="color:var(--or);font-size:12px">✦</span>
+        <div style="flex:1;max-width:180px;height:1px;border-top:1px dashed rgba(196,169,107,.45)"></div>
       </div>
-      <div style="position:absolute;bottom:-28px;right:-28px;width:120px;height:120px;background:var(--cream);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--blush)">
-        <strong style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300">4,8</strong>
-        <span style="font-family:'Jost',sans-serif;font-size:8.5px;letter-spacing:.25em;text-transform:uppercase;color:var(--taupe)">★★★★★</span>
-        <span style="font-family:'Jost',sans-serif;font-size:8px;margin-top:3px;color:var(--taupe);letter-spacing:.15em">331 avis</span>
+    </div>
+    <div class="fond-grid" style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--blush)">
+      <div style="padding:60px 70px 60px 0;border-right:1px solid var(--blush)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:rgba(196,169,107,.1);line-height:1;margin-bottom:20px">U</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--charcoal);margin-bottom:20px">Umi</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.95;color:var(--taupe)">Elle pense en matières. En tombés. En détails invisibles aux yeux des autres. Elle comprend le vêtement comme un langage silencieux — chaque couture porte une intention, chaque tissu raconte quelque chose de la femme qui le porte.</p>
+      </div>
+      <div style="padding:60px 0 60px 70px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:rgba(196,169,107,.1);line-height:1;margin-bottom:20px">M</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--charcoal);margin-bottom:20px">Melissa</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.95;color:var(--taupe)">Elle pense en expérience. En structure. En relation humaine. Elle apporte l'équilibre, la rigueur, la précision. C'est elle qui fait en sorte que chaque rendez-vous soit vécu comme un moment rare, pas expédié.</p>
       </div>
     </div>
   </div>
