@@ -109,7 +109,17 @@ footer{background:var(--cream);padding:56px 80px;display:grid;grid-template-colu
 .tilt-card{width:100%;aspect-ratio:3/4;border-radius:10px;overflow:hidden;box-shadow:0 14px 36px rgba(44,36,32,.12);display:flex;align-items:center;justify-content:center}
 .tilt-cap{font-family:'Jost',sans-serif;font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--taupe)}
 .tilt-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--nude);z-index:5}
-@media(max-width:768px){.tilt-scroll{height:300vh}.tilt-grid{gap:7px;padding:0 16px;max-width:520px}.tilt-col:nth-child(3){display:none}}
+@media(max-width:768px){
+  /* Galerie créations — grille plate 2 colonnes (effet 3D désactivé sur mobile) */
+  .tilt-scroll{height:auto!important;background:var(--white)}
+  .tilt-sticky{position:static!important;height:auto!important;display:block;overflow:visible;perspective:none;padding:0 0 6px}
+  .tilt-head{margin-bottom:34px}
+  .tilt-grid{transform:none!important;display:grid!important;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px;max-width:none;perspective:none}
+  .tilt-col{display:contents}
+  .tilt-col:nth-child(2),.tilt-col:nth-child(3){margin-top:0;display:contents}
+  .tilt-card{transform:none!important;margin:0}
+  .tilt-hint{display:none}
+}
 /* GALERIE AMBIANCE ATELIER — CSS scroll horizontal */
 .circ-sec{padding:96px 0 76px;text-align:center;background:var(--white)}
 .circ-head{padding:0 80px;margin-bottom:34px;position:relative;z-index:5}
@@ -402,6 +412,12 @@ if(navPill)navPill.addEventListener('mouseleave',function(){var c=document.getEl
   function clamp(v){return Math.max(0,Math.min(1,v));}
   function lerp(a,b,t){return a+(b-a)*t;}
   function update(){
+    // Sur mobile : pas d'effet 3D, grille fixe — on nettoie les transforms inline
+    if(window.innerWidth<=768){
+      grid.style.transform='';
+      cols.forEach(function(c){c.style.transform='';});
+      return;
+    }
     var rect=scrollEl.getBoundingClientRect();
     var total=scrollEl.offsetHeight-window.innerHeight;
     var p=total>0?clamp(-rect.top/total):0;
